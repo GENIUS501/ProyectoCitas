@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DosCuerdasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bitacora_Movimientos">
+    <Key>
+      <PropertyRef Name="codigo_movimiento_usuario" />
+    </Key>
+    <Property Name="codigo_movimiento_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_hora_movimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="tipo_movimiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modulo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Usuario" Type="Int32" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Fk_MOVIMIENTOS_USUARIOS" FromRole="Bitacora_Movimientos" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Bitacora_Sesiones">
+    <Key>
+      <PropertyRef Name="codigo_ingreso_salida" />
+    </Key>
+    <Property Name="codigo_ingreso_salida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_hora_ingreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fecha_hora_salida" Type="DateTime" Precision="3" />
+    <Property Name="Id_Usuario" Type="Int32" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Fk_SESIONES_USUARIOS" FromRole="Bitacora_Sesiones" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Cita">
+    <Key>
+      <PropertyRef Name="IDCITA" />
+    </Key>
+    <Property Name="IDCITA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HORA_CITA" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DURACION" Type="Double" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHACITA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="Id_Profesor" Type="Int32" Nullable="false" />
+    <Property Name="Id_Estudiante" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estudiantes" Relationship="Self.Fk_CITA_ESTUDIANTES" FromRole="Cita" ToRole="Estudiantes" />
+    <NavigationProperty Name="Profesores" Relationship="Self.Fk_CITA_PROFESORES" FromRole="Cita" ToRole="Profesores" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Fk_CITA_USUARIOS" FromRole="Cita" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="Id_Cliente" />
+    </Key>
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PERSONA" Type="Int32" />
+    <NavigationProperty Name="Personas" Relationship="Self.Fk_Clientes_PERSONAS" FromRole="Clientes" ToRole="Personas" />
+  </EntityType>
+  <EntityType Name="Estudiantes">
+    <Key>
+      <PropertyRef Name="Id_Estudiante" />
+    </Key>
+    <Property Name="Id_Estudiante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sucursal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TipoClase" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Horario" Type="DateTime" Precision="3" />
+    <Property Name="ID_PERSONA" Type="Int32" />
+    <NavigationProperty Name="Cita" Relationship="Self.Fk_CITA_ESTUDIANTES" FromRole="Estudiantes" ToRole="Cita" />
+    <NavigationProperty Name="Personas" Relationship="Self.Fk_Estudiantes_PERSONAS" FromRole="Estudiantes" ToRole="Personas" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modulo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Accion" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Rol" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Roles" Relationship="Self.Fk_PERMISOS_ROLES" FromRole="Permisos" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="ID_PERSONA" />
+    </Key>
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrimerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Genero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Correo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoAdisional" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Clientes" Relationship="Self.Fk_Clientes_PERSONAS" FromRole="Personas" ToRole="Clientes" />
+    <NavigationProperty Name="Estudiantes" Relationship="Self.Fk_Estudiantes_PERSONAS" FromRole="Personas" ToRole="Estudiantes" />
+    <NavigationProperty Name="Profesores" Relationship="Self.Fk_PROFESORES_PERSONAS" FromRole="Personas" ToRole="Profesores" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Fk_USUARIOS_PERSONAS" FromRole="Personas" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Profesores">
+    <Key>
+      <PropertyRef Name="Id_Profesor" />
+    </Key>
+    <Property Name="Id_Profesor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Profesion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="instrumento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PERSONA" Type="Int32" />
+    <NavigationProperty Name="Cita" Relationship="Self.Fk_CITA_PROFESORES" FromRole="Profesores" ToRole="Cita" />
+    <NavigationProperty Name="Personas" Relationship="Self.Fk_PROFESORES_PERSONAS" FromRole="Profesores" ToRole="Personas" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id_Rol" />
+    </Key>
+    <Property Name="Id_Rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreRol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Permisos" Relationship="Self.Fk_PERMISOS_ROLES" FromRole="Roles" ToRole="Permisos" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.Fk_USUARIOS_ROLES" FromRole="Roles" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Rol" Type="Int32" />
+    <Property Name="ID_PERSONA" Type="Int32" />
+    <Property Name="Usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <NavigationProperty Name="Bitacora_Movimientos" Relationship="Self.Fk_MOVIMIENTOS_USUARIOS" FromRole="Usuarios" ToRole="Bitacora_Movimientos" />
+    <NavigationProperty Name="Bitacora_Sesiones" Relationship="Self.Fk_SESIONES_USUARIOS" FromRole="Usuarios" ToRole="Bitacora_Sesiones" />
+    <NavigationProperty Name="Cita" Relationship="Self.Fk_CITA_USUARIOS" FromRole="Usuarios" ToRole="Cita" />
+    <NavigationProperty Name="Personas" Relationship="Self.Fk_USUARIOS_PERSONAS" FromRole="Usuarios" ToRole="Personas" />
+    <NavigationProperty Name="Roles" Relationship="Self.Fk_USUARIOS_ROLES" FromRole="Usuarios" ToRole="Roles" />
+  </EntityType>
+  <Association Name="Fk_MOVIMIENTOS_USUARIOS">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Bitacora_Movimientos" Type="Self.Bitacora_Movimientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Bitacora_Movimientos">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_SESIONES_USUARIOS">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Bitacora_Sesiones" Type="Self.Bitacora_Sesiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Bitacora_Sesiones">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_CITA_ESTUDIANTES">
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiantes">
+        <PropertyRef Name="Id_Estudiante" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="Id_Estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_CITA_PROFESORES">
+    <End Role="Profesores" Type="Self.Profesores" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesores">
+        <PropertyRef Name="Id_Profesor" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="Id_Profesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_CITA_USUARIOS">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id_Usuario" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="Id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Clientes_PERSONAS">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_Estudiantes_PERSONAS">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="Estudiantes">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_PERMISOS_ROLES">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id_Rol" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="Id_Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_PROFESORES_PERSONAS">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+    <End Role="Profesores" Type="Self.Profesores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="Profesores">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_USUARIOS_PERSONAS">
+    <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personas">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_USUARIOS_ROLES">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id_Rol" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Id_Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DosCuerdasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bitacora_Movimientos" EntityType="Self.Bitacora_Movimientos" />
+    <EntitySet Name="Bitacora_Sesiones" EntityType="Self.Bitacora_Sesiones" />
+    <EntitySet Name="Cita" EntityType="Self.Cita" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" />
+    <EntitySet Name="Personas" EntityType="Self.Personas" />
+    <EntitySet Name="Profesores" EntityType="Self.Profesores" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="Fk_MOVIMIENTOS_USUARIOS" Association="Self.Fk_MOVIMIENTOS_USUARIOS">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Bitacora_Movimientos" EntitySet="Bitacora_Movimientos" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_SESIONES_USUARIOS" Association="Self.Fk_SESIONES_USUARIOS">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Bitacora_Sesiones" EntitySet="Bitacora_Sesiones" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_CITA_ESTUDIANTES" Association="Self.Fk_CITA_ESTUDIANTES">
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_CITA_PROFESORES" Association="Self.Fk_CITA_PROFESORES">
+      <End Role="Profesores" EntitySet="Profesores" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_CITA_USUARIOS" Association="Self.Fk_CITA_USUARIOS">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Clientes_PERSONAS" Association="Self.Fk_Clientes_PERSONAS">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_Estudiantes_PERSONAS" Association="Self.Fk_Estudiantes_PERSONAS">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_PERMISOS_ROLES" Association="Self.Fk_PERMISOS_ROLES">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_PROFESORES_PERSONAS" Association="Self.Fk_PROFESORES_PERSONAS">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Profesores" EntitySet="Profesores" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_USUARIOS_PERSONAS" Association="Self.Fk_USUARIOS_PERSONAS">
+      <End Role="Personas" EntitySet="Personas" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_USUARIOS_ROLES" Association="Self.Fk_USUARIOS_ROLES">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

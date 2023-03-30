@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17D60CBC-D330-4077-842A-8DED2C054487}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DosCuerdas.Modelo</RootNamespace>
+    <AssemblyName>DosCuerdas.Modelo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bitacora_Movimientos.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacora_Sesiones.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cita.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesModel.cs" />
+    <Compile Include="Datos.cs" />
+    <Compile Include="DBitacora_movimientos.cs" />
+    <Compile Include="DosCuerdas.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DosCuerdas.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DosCuerdas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DosCuerdas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DosCuerdas.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\EBitacora_movimientos.cs" />
+    <Compile Include="Entidades\EClientes.cs" />
+    <Compile Include="Entidades\EEstudiantes.cs" />
+    <Compile Include="Entidades\EPersonas.cs" />
+    <Compile Include="Entidades\EProfesores.cs" />
+    <Compile Include="Entidades\ERoles.cs" />
+    <Compile Include="Entidades\EUsuarios.cs" />
+    <Compile Include="Estudiantes.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permisos.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Personas.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonasModel.cs" />
+    <Compile Include="Profesores.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RolesModel.cs" />
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="DosCuerdas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DosCuerdas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DosCuerdas.edmx.diagram">
+      <DependentUpon>DosCuerdas.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DosCuerdas.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DosCuerdas.edmx</DependentUpon>
+      <LastGenOutput>DosCuerdas.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DosCuerdas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DosCuerdas.edmx</DependentUpon>
+      <LastGenOutput>DosCuerdas.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
