@@ -159,7 +159,6 @@ namespace DosCuerdas.Vista
                 errorProvider1.SetError(this.txtApellido1, "");
                 errorProvider1.SetError(this.txtApellido2, "");
                 errorProvider1.SetError(this.txtCorreo, "");
-                errorProvider1.SetError(this.txtDireccion, "");
                 errorProvider1.SetError(this.txtId, "");
                 errorProvider1.SetError(this.txtNombre, "");
                 errorProvider1.SetError(this.txtTelefono1, "");
