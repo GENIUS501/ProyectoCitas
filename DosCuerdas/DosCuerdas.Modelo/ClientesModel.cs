@@ -92,8 +92,9 @@ namespace DosCuerdas.Modelo
             try
             {
                 PersonasModel personasModel = new PersonasModel();
-                var PersonaEliminada = personasModel.Eliminar(ID);
-                if (PersonaEliminada > 0)
+                var IdPersona = db.Clientes.Where(x => x.Id_Cliente == ID).FirstOrDefault().Personas.ID_PERSONA;
+                
+                if (IdPersona > 0)
                 {
                     using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                     {
@@ -103,6 +104,8 @@ namespace DosCuerdas.Modelo
                         if (Resultado > 0)
                         {
                             Ts.Complete();
+                            var PersonaEliminada = personasModel.Eliminar(IdPersona);
+                            Resultado = PersonaEliminada;
                             //Entidad_Movimientos.Id_Usuario = Id_Usuario;
                             //Entidad_Movimientos.modulo = "Clientes";
                             //Entidad_Movimientos.tipo_movimiento = "Eliminar";
