@@ -14,7 +14,7 @@ namespace DosCuerdas.Vista
     public partial class MantenimientoUsuario : Form
     {
         #region Variables
-        UsuariosController controladorUsuarios;
+
         #endregion
         public MantenimientoUsuario()
         {

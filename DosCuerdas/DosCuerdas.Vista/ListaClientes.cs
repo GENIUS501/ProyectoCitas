@@ -68,8 +68,8 @@ namespace DosCuerdas.Vista
         {
             try
             {
-                EstudiantesController Negocios = new EstudiantesController();
-                EEstudiante Entidad = new EEstudiante();
+                ClientesController Negocios = new ClientesController();
+                EClientes Entidad = new EClientes();
                 dat_principal.DataSource = Negocios.Mostrar();
                 valorcelda = -1;
                 this.dat_principal.ReadOnly = true;

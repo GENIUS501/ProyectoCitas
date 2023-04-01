@@ -40,6 +40,12 @@ namespace DosCuerdas.Vista
                     this.Text = "Modificar Cliente";
                     this.txtId.Enabled = false;
                     llenar();
+                    this.txtApellido1.Enabled = true;
+                    this.txtApellido2.Enabled = true;
+                    this.txtCorreo.Enabled = true;
+                    this.txtNombre.Enabled = true;
+                    this.txtTelefono1.Enabled = true;
+                    this.txtTelefono2.Enabled = true;
                     if (Accion == "C")
                     {
                         this.Text = "Consultar Cliente";
@@ -56,8 +62,8 @@ namespace DosCuerdas.Vista
 
         private void llenar()
         {
-            EstudiantesController Controller = new EstudiantesController();
-            EEstudiante obj = new EEstudiante();
+            ClientesController Controller = new ClientesController();
+            EClientes obj = new EClientes();
             obj = Controller.Mostrar().Where(x => x.Id_Cliente == Id).FirstOrDefault();
             if (obj != null)
             {
@@ -205,7 +211,7 @@ namespace DosCuerdas.Vista
                 {
                     if (Accion == "A" || Accion == "M")
                     {
-                        EEstudiante obj = new EEstudiante();
+                        EClientes obj = new EClientes();
 
                         obj.Cedula = this.txtCedula.Text;
                         obj.Nombre = this.txtNombre.Text;
@@ -217,7 +223,7 @@ namespace DosCuerdas.Vista
                         obj.Telefono = this.txtTelefono1.Text;
                         obj.TelefonoAdisional = this.txtTelefono2.Text;
 
-                        EstudiantesController Negocios = new EstudiantesController();
+                        ClientesController Negocios = new ClientesController();
                         Int32 FilasAfectadas = 0;
                         #region Agregar
                         if (Accion == "A")
@@ -284,6 +290,14 @@ namespace DosCuerdas.Vista
             {
                 var Existe = llenarDatosPersonales();
                 if(!Existe && Accion == "A")
+                {
+                    this.txtApellido1.Enabled = true;
+                    this.txtApellido2.Enabled = true;
+                    this.txtCorreo.Enabled = true;
+                    this.txtNombre.Enabled = true;
+                    this.txtTelefono1.Enabled = true;
+                    this.txtTelefono2.Enabled = true;
+                }else if (Accion == "M")
                 {
                     this.txtApellido1.Enabled = true;
                     this.txtApellido2.Enabled = true;
