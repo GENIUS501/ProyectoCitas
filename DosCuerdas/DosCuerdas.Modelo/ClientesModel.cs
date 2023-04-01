@@ -32,6 +32,12 @@ namespace DosCuerdas.Modelo
                 }
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
+                    var ClienteExistente = db.Clientes.Where(x => x.Id_Cliente == obj.Id_Cliente && x.ID_PERSONA == obj.ID_PERSONA).FirstOrDefault();
+                    if(ClienteExistente!=null)
+                    {
+                        Ts.Dispose();
+                        throw new Exception("El cliente ya existe.");
+                    }
                     Clientes Objbd = new Clientes();
                     Objbd.ID_PERSONA = IdPersona;
                     db.Entry(Objbd).State = EntityState.Added;

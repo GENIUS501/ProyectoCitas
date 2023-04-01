@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clientescontroller.cs" />
+    <Compile Include="PersonasController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesController.cs" />
     <Compile Include="UsuariosController.cs" />

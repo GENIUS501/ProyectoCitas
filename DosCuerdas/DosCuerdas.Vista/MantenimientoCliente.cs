@@ -72,7 +72,25 @@ namespace DosCuerdas.Vista
                 IdPersona = obj.ID_PERSONA;
             }
         }
-
+        private bool llenarDatosPersonales()
+        {
+            bool Existe = false;
+            PersonasController Controller = new PersonasController();
+            EPersonas obj = new EPersonas();
+            obj = Controller.Mostrar().Where(x => x.Cedula == this.txtCedula.Text).FirstOrDefault();
+            if (obj != null)
+            {
+                this.txtNombre.Text = obj.Nombre;
+                this.txtApellido1.Text = obj.PrimerApellido;
+                this.txtApellido2.Text = obj.SegundoApellido;
+                this.txtCorreo.Text = obj.Correo;
+                this.txtTelefono1.Text = obj.Telefono;
+                this.txtTelefono2.Text = obj.TelefonoAdisional;
+                IdPersona = obj.ID_PERSONA;
+                Existe = true;
+            }
+            return Existe;
+        }
         private bool validar()
         {
             bool ok = false;
@@ -194,7 +212,7 @@ namespace DosCuerdas.Vista
                         obj.Correo = this.txtCorreo.Text;
                         obj.Telefono = this.txtTelefono1.Text;
                         obj.TelefonoAdisional = this.txtTelefono2.Text;
-                        
+
                         Clientescontroller Negocios = new Clientescontroller();
                         Int32 FilasAfectadas = 0;
                         #region Agregar
@@ -248,6 +266,27 @@ namespace DosCuerdas.Vista
                         }
                         #endregion
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var Existe = llenarDatosPersonales();
+                if(!Existe && Accion == "A")
+                {
+                    this.txtApellido1.Enabled = true;
+                    this.txtApellido2.Enabled = true;
+                    this.txtCorreo.Enabled = true;
+                    this.txtNombre.Enabled = true;
+                    this.txtTelefono1.Enabled = true;
+                    this.txtTelefono2.Enabled = true;
                 }
             }
             catch (Exception ex)

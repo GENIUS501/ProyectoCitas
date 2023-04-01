@@ -32,6 +32,12 @@ namespace DosCuerdas.Modelo
                 }
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
+                    var EstudianteExistente = db.Estudiantes.Where(x => x.Id_Estudiante == obj.Id_Estudiante && x.ID_PERSONA == obj.ID_PERSONA).FirstOrDefault();
+                    if (EstudianteExistente != null)
+                    {
+                        Ts.Dispose();
+                        throw new Exception("El estudiante ya existe.");
+                    }
                     Estudiantes Objbd = new Estudiantes();
                     Objbd.ID_PERSONA = IdPersona;
                     Objbd.Correo = obj.Correo;
