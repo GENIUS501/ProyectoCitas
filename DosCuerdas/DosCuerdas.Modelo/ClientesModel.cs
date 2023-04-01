@@ -104,8 +104,6 @@ namespace DosCuerdas.Modelo
                         if (Resultado > 0)
                         {
                             Ts.Complete();
-                            var PersonaEliminada = personasModel.Eliminar(IdPersona);
-                            Resultado = PersonaEliminada;
                             //Entidad_Movimientos.Id_Usuario = Id_Usuario;
                             //Entidad_Movimientos.modulo = "Clientes";
                             //Entidad_Movimientos.tipo_movimiento = "Eliminar";
