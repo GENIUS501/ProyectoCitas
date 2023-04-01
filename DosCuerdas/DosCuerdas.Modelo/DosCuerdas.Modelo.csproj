@@ -92,6 +92,7 @@
     <Compile Include="Estudiantes.cs">
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
+    <Compile Include="EstudiantesModel.cs" />
     <Compile Include="Permisos.cs">
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
