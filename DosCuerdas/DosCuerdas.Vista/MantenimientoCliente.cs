@@ -89,6 +89,10 @@ namespace DosCuerdas.Vista
                 IdPersona = obj.ID_PERSONA;
                 Existe = true;
             }
+            else
+            {
+                IdPersona = 0;
+            }
             return Existe;
         }
         private bool validar()
