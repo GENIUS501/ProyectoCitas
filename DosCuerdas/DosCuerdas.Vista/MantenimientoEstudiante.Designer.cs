@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoEstudiante));
+            this.txtHorario = new System.Windows.Forms.DateTimePicker();
             this.lblHorario = new System.Windows.Forms.Label();
             this.txtClase = new System.Windows.Forms.TextBox();
             this.lblClase = new System.Windows.Forms.Label();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtTelefono2 = new System.Windows.Forms.TextBox();
             this.txtTelefono1 = new System.Windows.Forms.TextBox();
             this.txtApellido2 = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblDireccion = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblTelefono2 = new System.Windows.Forms.Label();
             this.lblTelefono1 = new System.Windows.Forms.Label();
@@ -55,17 +54,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.lblid = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // txtHorario
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(24, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(124, 20);
-            this.dateTimePicker1.TabIndex = 74;
+            this.txtHorario.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtHorario.Location = new System.Drawing.Point(24, 48);
+            this.txtHorario.Name = "txtHorario";
+            this.txtHorario.Size = new System.Drawing.Size(124, 20);
+            this.txtHorario.TabIndex = 74;
             // 
             // lblHorario
             // 
@@ -116,15 +121,9 @@
             this.label2.TabIndex = 69;
             this.label2.Text = "Sucursal";
             // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(186, 231);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccion.TabIndex = 68;
-            // 
             // txtCorreo
             // 
+            this.txtCorreo.Enabled = false;
             this.txtCorreo.Location = new System.Drawing.Point(22, 230);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
@@ -132,6 +131,7 @@
             // 
             // txtTelefono2
             // 
+            this.txtTelefono2.Enabled = false;
             this.txtTelefono2.Location = new System.Drawing.Point(186, 169);
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(100, 20);
@@ -139,6 +139,7 @@
             // 
             // txtTelefono1
             // 
+            this.txtTelefono1.Enabled = false;
             this.txtTelefono1.Location = new System.Drawing.Point(22, 169);
             this.txtTelefono1.Name = "txtTelefono1";
             this.txtTelefono1.Size = new System.Drawing.Size(100, 20);
@@ -146,6 +147,7 @@
             // 
             // txtApellido2
             // 
+            this.txtApellido2.Enabled = false;
             this.txtApellido2.Location = new System.Drawing.Point(186, 108);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(100, 20);
@@ -153,6 +155,7 @@
             // 
             // txtApellido1
             // 
+            this.txtApellido1.Enabled = false;
             this.txtApellido1.Location = new System.Drawing.Point(22, 108);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(103, 20);
@@ -160,17 +163,11 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(22, 52);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(103, 20);
             this.txtNombre.TabIndex = 62;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(186, 52);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 61;
             // 
             // btnCancelar
             // 
@@ -181,6 +178,7 @@
             this.btnCancelar.TabIndex = 60;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -191,16 +189,7 @@
             this.btnAceptar.TabIndex = 59;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(183, 213);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(68, 15);
-            this.lblDireccion.TabIndex = 57;
-            this.lblDireccion.Text = "Dirección";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblCorreo
             // 
@@ -284,18 +273,19 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblCedula);
+            this.groupBox1.Controls.Add(this.lblid);
+            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.btn_buscar);
             this.groupBox1.Controls.Add(this.txtCedula);
+            this.groupBox1.Controls.Add(this.lblCedula);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.lblApellido1);
             this.groupBox1.Controls.Add(this.txtApellido1);
             this.groupBox1.Controls.Add(this.lblApellido2);
-            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtApellido2);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.lblTelefono1);
-            this.groupBox1.Controls.Add(this.lblDireccion);
             this.groupBox1.Controls.Add(this.txtTelefono2);
             this.groupBox1.Controls.Add(this.txtTelefono1);
             this.groupBox1.Controls.Add(this.lblTelefono2);
@@ -310,7 +300,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblHorario);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.txtHorario);
             this.groupBox2.Controls.Add(this.cmbSucursal);
             this.groupBox2.Controls.Add(this.txtClase);
             this.groupBox2.Controls.Add(this.label2);
@@ -322,6 +312,46 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de la Clase";
             // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(308, 56);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar.TabIndex = 70;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(184, 56);
+            this.txtCedula.Mask = "000000000000";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(118, 20);
+            this.txtCedula.TabIndex = 69;
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(181, 212);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(90, 15);
+            this.lblid.TabIndex = 71;
+            this.lblid.Text = "Id del cliente";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(184, 230);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(117, 20);
+            this.txtId.TabIndex = 72;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // MantenimientoEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,12 +362,15 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
+            this.Enabled = false;
             this.Name = "MantenimientoEstudiante";
             this.Text = "Dos Cuerdas | MantenimientoEstudiante";
+            this.Load += new System.EventHandler(this.MantenimientoEstudiante_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,23 +378,20 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txtHorario;
         private System.Windows.Forms.Label lblHorario;
         private System.Windows.Forms.TextBox txtClase;
         private System.Windows.Forms.Label lblClase;
         private System.Windows.Forms.ComboBox cmbSucursal;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtTelefono2;
         private System.Windows.Forms.TextBox txtTelefono1;
         private System.Windows.Forms.TextBox txtApellido2;
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblTelefono2;
         private System.Windows.Forms.Label lblTelefono1;
@@ -372,5 +402,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

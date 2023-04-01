@@ -56,8 +56,8 @@ namespace DosCuerdas.Vista
 
         private void llenar()
         {
-            Clientescontroller Controller = new Clientescontroller();
-            EClientes obj = new EClientes();
+            EstudiantesController Controller = new EstudiantesController();
+            EEstudiante obj = new EEstudiante();
             obj = Controller.Mostrar().Where(x => x.Id_Cliente == Id).FirstOrDefault();
             if (obj != null)
             {
@@ -205,7 +205,7 @@ namespace DosCuerdas.Vista
                 {
                     if (Accion == "A" || Accion == "M")
                     {
-                        EClientes obj = new EClientes();
+                        EEstudiante obj = new EEstudiante();
 
                         obj.Cedula = this.txtCedula.Text;
                         obj.Nombre = this.txtNombre.Text;
@@ -217,7 +217,7 @@ namespace DosCuerdas.Vista
                         obj.Telefono = this.txtTelefono1.Text;
                         obj.TelefonoAdisional = this.txtTelefono2.Text;
 
-                        Clientescontroller Negocios = new Clientescontroller();
+                        EstudiantesController Negocios = new EstudiantesController();
                         Int32 FilasAfectadas = 0;
                         #region Agregar
                         if (Accion == "A")

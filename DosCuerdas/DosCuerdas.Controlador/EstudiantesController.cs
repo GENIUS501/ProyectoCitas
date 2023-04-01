@@ -1,5 +1,5 @@
-﻿using DosCuerdas.Modelo.Entidades;
-using DosCuerdas.Modelo;
+﻿using DosCuerdas.Modelo;
+using DosCuerdas.Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace DosCuerdas.Controlador
 {
-    public class ClientesController
+    public class EstudiantesController
     {
         #region Agregar
-        public int Agregar(EClientes obj, int? Usuario)
+        public int Agregar(EEstudiantes obj, int? Usuario)
         {
             try
             {
-                ClientesModel db = new ClientesModel();
+                EstudiantesModel db = new EstudiantesModel();
                 return db.Agregar(obj, Usuario);
             }
             catch (Exception ex)
@@ -23,26 +23,14 @@ namespace DosCuerdas.Controlador
                 throw ex;
             }
         }
-        //public int AgregarPermisos(List<EPermisos> obj, int Idrol)
-        //{
-        //    try
-        //    {
-        //        DPermisos db = new DPermisos();
-        //        return db.Agregar(obj, Idrol);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
         #endregion
 
         #region Modificar
-        public int Modificar(EClientes obj, int? Idusuario)
+        public int Modificar(EEstudiantes obj, int? Idusuario)
         {
             try
             {
-                ClientesModel db = new ClientesModel();
+                EstudiantesModel db = new EstudiantesModel();
                 return db.Modificar(obj, Idusuario);
             }
             catch (Exception ex)
@@ -57,7 +45,7 @@ namespace DosCuerdas.Controlador
         {
             try
             {
-                ClientesModel db = new ClientesModel();
+                EstudiantesModel db = new EstudiantesModel();
                 return db.Eliminar(ID, Idusuario);
             }
             catch (Exception ex)
@@ -68,11 +56,11 @@ namespace DosCuerdas.Controlador
         #endregion
 
         #region Mostrar
-        public List<EClientes> Mostrar()
+        public List<EEstudiantes> Mostrar()
         {
             try
             {
-                ClientesModel db = new ClientesModel();
+                EstudiantesModel db = new EstudiantesModel();
                 return db.Mostrar();
             }
             catch (Exception ex)

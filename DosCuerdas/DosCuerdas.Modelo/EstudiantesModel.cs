@@ -15,7 +15,7 @@ namespace DosCuerdas.Modelo
         EBitacora_movimientos Entidad_Movimientos = new EBitacora_movimientos();
         DBitacora_movimientos Movimientos = new DBitacora_movimientos();
         #region Agregar
-        public int Agregar(EEstudiantes obj, int Id_Usuario)
+        public int Agregar(EEstudiantes obj, int? Id_Usuario)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace DosCuerdas.Modelo
         #endregion
 
         #region Modificar
-        public int Modificar(EEstudiantes obj, int Id_Usuario)
+        public int Modificar(EEstudiantes obj, int? Id_Usuario)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace DosCuerdas.Modelo
         #endregion
 
         #region Eliminar
-        public int Eliminar(int ID, int Id_Usuario)
+        public int Eliminar(int ID, int? Id_Usuario)
         {
             try
             {
