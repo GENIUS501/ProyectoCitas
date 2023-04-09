@@ -133,7 +133,7 @@ namespace DosCuerdas.Vista
                     if (dr == DialogResult.Yes)
                     {
                         Int32 FilasAfectadas = 0;
-                        RolesController Negocios = new RolesController();
+                        ClientesController Negocios = new ClientesController();
                         FilasAfectadas = Negocios.Eliminar(valorcelda, Usuario);
                         if (FilasAfectadas > 0)
                         {

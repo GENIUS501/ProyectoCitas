@@ -98,7 +98,9 @@ namespace DosCuerdas.Vista
                         obj.Correo = this.txtCorreo.Text;
                         obj.Telefono = this.txtTelefono1.Text;
                         obj.TelefonoAdisional = this.txtTelefono2.Text;
-
+                        obj.Horario = Convert.ToDateTime(this.txtHorario.Text);
+                        obj.Sucursal = this.cmbSucursal.SelectedItem.ToString();
+                        obj.TipoClase = this.txtClase.Text;
                         EstudiantesController Negocios = new EstudiantesController();
                         Int32 FilasAfectadas = 0;
                         #region Agregar
