@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoUsuario));
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -53,16 +54,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.GrpDatosPersonales = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtTelefono2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTelefono1 = new System.Windows.Forms.TextBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblid = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.GrpDatosPersonales.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox2
@@ -175,7 +179,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(301, 337);
+            this.btnCancelar.Location = new System.Drawing.Point(314, 337);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 84;
@@ -274,10 +278,13 @@
             // 
             // GrpDatosPersonales
             // 
+            this.GrpDatosPersonales.Controls.Add(this.btn_buscar);
+            this.GrpDatosPersonales.Controls.Add(this.lblid);
+            this.GrpDatosPersonales.Controls.Add(this.txtId);
             this.GrpDatosPersonales.Controls.Add(this.label7);
-            this.GrpDatosPersonales.Controls.Add(this.textBox5);
+            this.GrpDatosPersonales.Controls.Add(this.txtTelefono2);
             this.GrpDatosPersonales.Controls.Add(this.label6);
-            this.GrpDatosPersonales.Controls.Add(this.textBox4);
+            this.GrpDatosPersonales.Controls.Add(this.txtTelefono1);
             this.GrpDatosPersonales.Controls.Add(this.cmbGenero);
             this.GrpDatosPersonales.Controls.Add(this.label5);
             this.GrpDatosPersonales.Controls.Add(this.label4);
@@ -294,7 +301,7 @@
             this.GrpDatosPersonales.Controls.Add(this.lblTelefono1);
             this.GrpDatosPersonales.Location = new System.Drawing.Point(12, 58);
             this.GrpDatosPersonales.Name = "GrpDatosPersonales";
-            this.GrpDatosPersonales.Size = new System.Drawing.Size(251, 243);
+            this.GrpDatosPersonales.Size = new System.Drawing.Size(283, 243);
             this.GrpDatosPersonales.TabIndex = 102;
             this.GrpDatosPersonales.TabStop = false;
             this.GrpDatosPersonales.Text = "Datos Personales";
@@ -309,12 +316,12 @@
             this.label7.TabIndex = 105;
             this.label7.Text = "Telefono adicional";
             // 
-            // textBox5
+            // txtTelefono2
             // 
-            this.textBox5.Location = new System.Drawing.Point(11, 205);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 106;
+            this.txtTelefono2.Location = new System.Drawing.Point(11, 205);
+            this.txtTelefono2.Name = "txtTelefono2";
+            this.txtTelefono2.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono2.TabIndex = 106;
             // 
             // label6
             // 
@@ -326,12 +333,12 @@
             this.label6.TabIndex = 103;
             this.label6.Text = "Telefono";
             // 
-            // textBox4
+            // txtTelefono1
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 154);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 104;
+            this.txtTelefono1.Location = new System.Drawing.Point(137, 154);
+            this.txtTelefono1.Name = "txtTelefono1";
+            this.txtTelefono1.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono1.TabIndex = 104;
             // 
             // cmbGenero
             // 
@@ -372,31 +379,58 @@
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 100;
             // 
-            // groupBox1
+            // groupBox2
             // 
-            this.groupBox1.Controls.Add(this.lblDireccion);
-            this.groupBox1.Controls.Add(this.lblTelefono2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCedula);
-            this.groupBox1.Controls.Add(this.txtCorreo);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.lblInstrumento);
-            this.groupBox1.Controls.Add(this.cmbrol);
-            this.groupBox1.Location = new System.Drawing.Point(269, 58);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 178);
-            this.groupBox1.TabIndex = 103;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de acceso";
+            this.groupBox2.Controls.Add(this.lblDireccion);
+            this.groupBox2.Controls.Add(this.lblTelefono2);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtCedula);
+            this.groupBox2.Controls.Add(this.txtCorreo);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtDireccion);
+            this.groupBox2.Controls.Add(this.lblInstrumento);
+            this.groupBox2.Controls.Add(this.cmbrol);
+            this.groupBox2.Location = new System.Drawing.Point(301, 58);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(282, 178);
+            this.groupBox2.TabIndex = 103;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos de acceso";
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(134, 187);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(90, 15);
+            this.lblid.TabIndex = 107;
+            this.lblid.Text = "Id del cliente";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(137, 205);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(102, 20);
+            this.txtId.TabIndex = 108;
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(245, 33);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar.TabIndex = 104;
+            this.btn_buscar.UseVisualStyleBackColor = true;
             // 
             // MantenimientoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 372);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(606, 372);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.GrpDatosPersonales);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -406,8 +440,8 @@
             this.Load += new System.EventHandler(this.MantenimientoUsuario_Load);
             this.GrpDatosPersonales.ResumeLayout(false);
             this.GrpDatosPersonales.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,10 +477,13 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTelefono2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTelefono1;
         private System.Windows.Forms.ComboBox cmbGenero;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btn_buscar;
     }
 }

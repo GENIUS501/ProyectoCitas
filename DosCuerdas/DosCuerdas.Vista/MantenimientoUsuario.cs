@@ -44,8 +44,35 @@ namespace DosCuerdas.Vista
                 new { Text = "Femenino", Value = "Femenino" },
                 new { Text = "No indicado", Value = "NA" }
             };
-            this.cmbGenero.DataSource = Generos.ToArray();
+            
+            var GenerosArray = Generos.Select(x => new { x.Text, x.Value }).ToArray();
+            this.cmbGenero.DataSource = GenerosArray;
             #endregion
+
+            if (Accion == "A")
+            {
+                this.lblid.Visible = false;
+                this.txtId.Visible = false;
+            }
+            if (Accion == "M" || Accion == "C")
+            {
+                this.Text = "Modificar usuario";
+                this.txtId.Enabled = false;
+               // llenar();
+                this.txtApellido1.Enabled = true;
+                this.txtApellido2.Enabled = true;
+                this.txtCorreo.Enabled = true;
+                this.txtNombre.Enabled = true;
+                this.txtTelefono1.Enabled = true;
+                this.txtTelefono2.Enabled = true;
+                if (Accion == "C")
+                {
+                    this.Text = "Consultar usuario";
+                    this.groupBox2.Enabled = false;
+                    this.groupBox2.Enabled = false;
+                }
+            }
+
         }
     }
 }
