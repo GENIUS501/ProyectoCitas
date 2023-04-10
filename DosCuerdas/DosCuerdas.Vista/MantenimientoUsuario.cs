@@ -14,7 +14,10 @@ namespace DosCuerdas.Vista
     public partial class MantenimientoUsuario : Form
     {
         #region Variables
-
+        public int Usuario { get; set; }
+        public string Accion { get; set; }
+        public int Id { get; set; }
+        public int IdPersona { get; set; }
         #endregion
         public MantenimientoUsuario()
         {

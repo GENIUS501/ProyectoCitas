@@ -18,10 +18,6 @@ namespace DosCuerdas.Vista
         {
             InitializeComponent();
         }
-
-       
-  
-
         private void salirToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -29,9 +25,17 @@ namespace DosCuerdas.Vista
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ingrearAc = new AcercaDe();
-            ingrearAc.MdiParent = this;
-            ingrearAc.Show();
+            try
+            {
+                ingrearAc = new AcercaDe();
+                ingrearAc.MdiParent = this;
+                ingrearAc.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void mantenimientoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,38 +48,67 @@ namespace DosCuerdas.Vista
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void mantenimientoDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ListaRoles frm = new ListaRoles();
-            MantenimientoRoles frm = new MantenimientoRoles();
-            frm.MdiParent = this;
-            frm.Show();
+            try
+            {
+                MantenimientoRoles frm = new MantenimientoRoles();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mantenimientoDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListaClientes frm = new ListaClientes();
-            frm.MdiParent = this;
-            frm.Show();
+            try
+            {
+                ListaClientes frm = new ListaClientes();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListaEstudiantes frm = new ListaEstudiantes();
-            frm.MdiParent = this;
-            frm.Show();
+            try
+            {
+                ListaEstudiantes frm = new ListaEstudiantes();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void mantenimientoDeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ListaProfesores frm = new ListaProfesores();
-            frm.MdiParent = this;
-            frm.Show();
+            try
+            {
+                ListaProfesores frm = new ListaProfesores();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
