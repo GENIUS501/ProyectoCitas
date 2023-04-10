@@ -184,7 +184,7 @@ namespace DosCuerdas.Vista
             {
                 this.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

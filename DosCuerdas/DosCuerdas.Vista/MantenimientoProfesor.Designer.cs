@@ -32,7 +32,6 @@
             this.cmbProfesion = new System.Windows.Forms.ComboBox();
             this.lblInstrumento = new System.Windows.Forms.Label();
             this.lblProfesion = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtTelefono2 = new System.Windows.Forms.TextBox();
             this.txtTelefono1 = new System.Windows.Forms.TextBox();
@@ -42,7 +41,6 @@
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblDireccion = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblTelefono2 = new System.Windows.Forms.Label();
             this.lblTelefono1 = new System.Windows.Forms.Label();
@@ -53,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblid = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -101,14 +101,6 @@
             this.lblProfesion.Size = new System.Drawing.Size(72, 15);
             this.lblProfesion.TabIndex = 64;
             this.lblProfesion.Text = "Profesión ";
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(177, 197);
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(117, 49);
-            this.txtDireccion.TabIndex = 63;
             // 
             // txtCorreo
             // 
@@ -162,32 +154,24 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(400, 354);
+            this.btnCancelar.Location = new System.Drawing.Point(342, 375);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 55;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(258, 354);
+            this.btnAceptar.Location = new System.Drawing.Point(200, 375);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 54;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(174, 179);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(68, 15);
-            this.lblDireccion.TabIndex = 52;
-            this.lblDireccion.Text = "Dirección";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblCorreo
             // 
@@ -263,7 +247,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(183, 25);
+            this.label1.Location = new System.Drawing.Point(153, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(283, 24);
             this.label1.TabIndex = 44;
@@ -271,16 +255,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblid);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.lblCedula);
             this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Controls.Add(this.lblApellido1);
-            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtApellido1);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.lblApellido2);
-            this.groupBox1.Controls.Add(this.lblDireccion);
             this.groupBox1.Controls.Add(this.txtTelefono2);
             this.groupBox1.Controls.Add(this.txtApellido2);
             this.groupBox1.Controls.Add(this.txtTelefono1);
@@ -307,6 +291,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Adicionales";
             // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(174, 179);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(90, 15);
+            this.lblid.TabIndex = 73;
+            this.lblid.Text = "Id del cliente";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(177, 197);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(117, 20);
+            this.txtId.TabIndex = 74;
+            // 
             // MantenimientoProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,6 +320,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MantenimientoProfesor";
             this.Text = "Dos Cuerdas | MantenimientoProfesor";
+            this.Load += new System.EventHandler(this.MantenimientoProfesor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -334,7 +336,6 @@
         private System.Windows.Forms.ComboBox cmbProfesion;
         private System.Windows.Forms.Label lblInstrumento;
         private System.Windows.Forms.Label lblProfesion;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtTelefono2;
         private System.Windows.Forms.TextBox txtTelefono1;
@@ -344,7 +345,6 @@
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblTelefono2;
         private System.Windows.Forms.Label lblTelefono1;
@@ -355,5 +355,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
