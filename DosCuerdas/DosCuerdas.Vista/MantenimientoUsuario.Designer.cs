@@ -404,6 +404,7 @@
             this.btn_buscar.Size = new System.Drawing.Size(25, 20);
             this.btn_buscar.TabIndex = 104;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // txtCedula
             // 
@@ -423,7 +424,6 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
-            this.Enabled = false;
             this.Name = "MantenimientoUsuario";
             this.Text = "Dos Cuerdas | MantenimientoUsuario";
             this.Load += new System.EventHandler(this.MantenimientoUsuario_Load);

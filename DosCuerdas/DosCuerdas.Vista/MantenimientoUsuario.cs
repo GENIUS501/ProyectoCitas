@@ -40,10 +40,10 @@ namespace DosCuerdas.Vista
             this.cmbGenero.DisplayMember = "Text";
             this.cmbGenero.ValueMember = "Value";
             List<dynamic> Generos = new List<dynamic> {
-                new { Text = "Masculino", Value = "Masculino" },
+                new { Text = "No indicado", Value = "NA" },
                 new { Text = "Femenino", Value = "Femenino" },
-                new { Text = "No indicado", Value = "NA" }
-            };     
+                new { Text = "Masculino", Value = "Masculino" }
+            };
             var GenerosArray = Generos.Select(x => new { x.Text, x.Value }).ToArray();
             this.cmbGenero.DataSource = GenerosArray;
             #endregion
@@ -57,7 +57,7 @@ namespace DosCuerdas.Vista
             {
                 this.Text = "Modificar usuario";
                 this.txtId.Enabled = false;
-               // llenar();
+                // llenar();
                 this.txtApellido1.Enabled = true;
                 this.txtApellido2.Enabled = true;
                 this.txtClave.Enabled = true;
@@ -65,13 +65,19 @@ namespace DosCuerdas.Vista
                 this.txtTelefono1.Enabled = true;
                 this.txtTelefono2.Enabled = true;
                 this.txtFechaNac.Enabled = true;
+                this.cmbGenero.Enabled = true;
                 if (Accion == "C")
                 {
                     this.Text = "Consultar usuario";
-                    this.groupBox2.Enabled = false;
+                    this.GrpDatosPersonales.Enabled = false;
                     this.groupBox2.Enabled = false;
                 }
             }
+
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
 
         }
     }
