@@ -188,5 +188,15 @@ namespace DosCuerdas.Vista
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_buscar_nombre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -53,11 +53,11 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -297,20 +297,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
-            // groupBox2
+            // lblid
             // 
-            this.groupBox2.Controls.Add(this.lblHorario);
-            this.groupBox2.Controls.Add(this.txtHorario);
-            this.groupBox2.Controls.Add(this.cmbSucursal);
-            this.groupBox2.Controls.Add(this.txtClase);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.lblClase);
-            this.groupBox2.Location = new System.Drawing.Point(399, 82);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 184);
-            this.groupBox2.TabIndex = 76;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos de la Clase";
+            this.lblid.AutoSize = true;
+            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(181, 212);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(90, 15);
+            this.lblid.TabIndex = 71;
+            this.lblid.Text = "Id del cliente";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(184, 230);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(117, 20);
+            this.txtId.TabIndex = 72;
             // 
             // btn_buscar
             // 
@@ -331,22 +333,20 @@
             this.txtCedula.Size = new System.Drawing.Size(118, 20);
             this.txtCedula.TabIndex = 69;
             // 
-            // lblid
+            // groupBox2
             // 
-            this.lblid.AutoSize = true;
-            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(181, 212);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(90, 15);
-            this.lblid.TabIndex = 71;
-            this.lblid.Text = "Id del cliente";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(184, 230);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(117, 20);
-            this.txtId.TabIndex = 72;
+            this.groupBox2.Controls.Add(this.lblHorario);
+            this.groupBox2.Controls.Add(this.txtHorario);
+            this.groupBox2.Controls.Add(this.cmbSucursal);
+            this.groupBox2.Controls.Add(this.txtClase);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.lblClase);
+            this.groupBox2.Location = new System.Drawing.Point(399, 82);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(251, 184);
+            this.groupBox2.TabIndex = 76;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos de la Clase";
             // 
             // errorProvider1
             // 
@@ -362,7 +362,6 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
-            this.Enabled = false;
             this.Name = "MantenimientoEstudiante";
             this.Text = "Dos Cuerdas | MantenimientoEstudiante";
             this.Load += new System.EventHandler(this.MantenimientoEstudiante_Load);

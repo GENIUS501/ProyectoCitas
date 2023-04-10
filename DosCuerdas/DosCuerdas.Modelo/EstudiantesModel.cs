@@ -113,33 +113,23 @@ namespace DosCuerdas.Modelo
         {
             try
             {
-                PersonasModel personasModel = new PersonasModel();
-                var IdPersona = db.Clientes.Where(x => x.Id_Cliente == ID).FirstOrDefault().Personas.ID_PERSONA;
-
-                if (IdPersona > 0)
+                using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+                    var Objbd = db.Estudiantes.Where(x => x.Id_Estudiante == ID).FirstOrDefault();
+                    db.Entry(Objbd).State = EntityState.Deleted;
+                    int Resultado = db.SaveChanges();
+                    if (Resultado > 0)
                     {
-                        var Objbd = db.Personas.Where(x => x.ID_PERSONA == ID).FirstOrDefault();
-                        db.Entry(Objbd).State = EntityState.Deleted;
-                        int Resultado = db.SaveChanges();
-                        if (Resultado > 0)
-                        {
-                            Ts.Complete();
-                            //Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                            //Entidad_Movimientos.modulo = "Clientes";
-                            //Entidad_Movimientos.tipo_movimiento = "Eliminar";
-                            //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
-                            //Movimientos.Agregar(Entidad_Movimientos);
-                            return Resultado;
-                        }
-                        Ts.Dispose();
+                        Ts.Complete();
+                        //Entidad_Movimientos.Id_Usuario = Id_Usuario;
+                        //Entidad_Movimientos.modulo = "Clientes";
+                        //Entidad_Movimientos.tipo_movimiento = "Eliminar";
+                        //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
+                        //Movimientos.Agregar(Entidad_Movimientos);
                         return Resultado;
                     }
-                }
-                else
-                {
-                    return 0;
+                    Ts.Dispose();
+                    return Resultado;
                 }
             }
             catch (Exception ex)
