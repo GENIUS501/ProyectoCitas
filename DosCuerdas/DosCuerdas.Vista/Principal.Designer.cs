@@ -155,6 +155,7 @@
             this.mantenimientoDeToolStripMenuItem1.Name = "mantenimientoDeToolStripMenuItem1";
             this.mantenimientoDeToolStripMenuItem1.Size = new System.Drawing.Size(235, 22);
             this.mantenimientoDeToolStripMenuItem1.Text = "Mantenimiento de Profesores";
+            this.mantenimientoDeToolStripMenuItem1.Click += new System.EventHandler(this.mantenimientoDeToolStripMenuItem1_Click);
             // 
             // mantenimientoDeUsuariosToolStripMenuItem
             // 

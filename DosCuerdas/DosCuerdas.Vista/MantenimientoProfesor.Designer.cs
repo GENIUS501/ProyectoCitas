@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoProfesor));
             this.cmbInstrumento = new System.Windows.Forms.ComboBox();
             this.cmbProfesion = new System.Windows.Forms.ComboBox();
             this.lblInstrumento = new System.Windows.Forms.Label();
@@ -38,7 +40,6 @@
             this.txtApellido2 = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblCorreo = new System.Windows.Forms.Label();
@@ -53,12 +54,17 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblid = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbInstrumento
             // 
+            this.cmbInstrumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbInstrumento.FormattingEnabled = true;
             this.cmbInstrumento.Items.AddRange(new object[] {
             "Violín",
@@ -74,6 +80,7 @@
             // 
             // cmbProfesion
             // 
+            this.cmbProfesion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProfesion.FormattingEnabled = true;
             this.cmbProfesion.Items.AddRange(new object[] {
             "Músico"});
@@ -104,6 +111,7 @@
             // 
             // txtCorreo
             // 
+            this.txtCorreo.Enabled = false;
             this.txtCorreo.Location = new System.Drawing.Point(11, 197);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(118, 20);
@@ -111,6 +119,7 @@
             // 
             // txtTelefono2
             // 
+            this.txtTelefono2.Enabled = false;
             this.txtTelefono2.Location = new System.Drawing.Point(177, 145);
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(100, 20);
@@ -118,6 +127,7 @@
             // 
             // txtTelefono1
             // 
+            this.txtTelefono1.Enabled = false;
             this.txtTelefono1.Location = new System.Drawing.Point(11, 145);
             this.txtTelefono1.Name = "txtTelefono1";
             this.txtTelefono1.Size = new System.Drawing.Size(118, 20);
@@ -125,6 +135,7 @@
             // 
             // txtApellido2
             // 
+            this.txtApellido2.Enabled = false;
             this.txtApellido2.Location = new System.Drawing.Point(177, 87);
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(100, 20);
@@ -132,6 +143,7 @@
             // 
             // txtApellido1
             // 
+            this.txtApellido1.Enabled = false;
             this.txtApellido1.Location = new System.Drawing.Point(11, 87);
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(118, 20);
@@ -139,17 +151,11 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(11, 34);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(118, 20);
             this.txtNombre.TabIndex = 57;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(177, 34);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 56;
             // 
             // btnCancelar
             // 
@@ -255,12 +261,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCedula);
+            this.groupBox1.Controls.Add(this.btn_buscar);
             this.groupBox1.Controls.Add(this.lblid);
             this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.lblCedula);
-            this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Controls.Add(this.lblApellido1);
             this.groupBox1.Controls.Add(this.txtApellido1);
             this.groupBox1.Controls.Add(this.txtCorreo);
@@ -308,6 +315,29 @@
             this.txtId.Size = new System.Drawing.Size(117, 20);
             this.txtId.TabIndex = 74;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(283, 33);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar.TabIndex = 75;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(176, 33);
+            this.txtCedula.Mask = "000000000000";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(101, 20);
+            this.txtCedula.TabIndex = 76;
+            // 
             // MantenimientoProfesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +355,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,7 +373,6 @@
         private System.Windows.Forms.TextBox txtApellido2;
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblCorreo;
@@ -357,5 +387,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
     }
 }

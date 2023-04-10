@@ -58,7 +58,7 @@ namespace DosCuerdas.Vista
                     if (dr == DialogResult.Yes)
                     {
                         Int32 FilasAfectadas = 0;
-                        ClientesController Negocios = new ClientesController();
+                        EstudiantesController Negocios = new EstudiantesController();
                         FilasAfectadas = Negocios.Eliminar(valorcelda, Usuario);
                         if (FilasAfectadas > 0)
                         {

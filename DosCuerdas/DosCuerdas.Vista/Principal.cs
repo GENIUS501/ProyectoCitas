@@ -70,5 +70,12 @@ namespace DosCuerdas.Vista
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void mantenimientoDeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListaProfesores frm = new ListaProfesores();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

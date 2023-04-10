@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,17 +28,136 @@ namespace DosCuerdas.Vista
 
         private void MantenimientoProfesor_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (Accion == "A")
+                {
+                    this.lblid.Visible = false;
+                    this.txtId.Visible = false;
+                }
+                if (Accion == "M" || Accion == "C")
+                {
+                    this.Text = "Modificar Profesor";
+                    this.txtId.Enabled = false;
+                    llenar();
+                    llenarDatosPersonales();
+                    this.txtApellido1.Enabled = true;
+                    this.txtApellido2.Enabled = true;
+                    this.txtCorreo.Enabled = true;
+                    this.txtNombre.Enabled = true;
+                    this.txtTelefono1.Enabled = true;
+                    this.txtTelefono2.Enabled = true;
+                    if (Accion == "C")
+                    {
+                        this.Text = "Consultar Profesor";
+                        this.groupBox1.Enabled = false;
+                        this.groupBox2.Enabled = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (Accion == "C")
+                {
+                    this.Close();
+                }
+                borrar_error();
+                if (!validar())
+                {
+                    if (Accion == "A" || Accion == "M")
+                    {
+                        EProfesores obj = new EProfesores();
 
+                        obj.Cedula = this.txtCedula.Text;
+                        obj.Nombre = this.txtNombre.Text;
+                        obj.PrimerApellido = this.txtApellido1.Text;
+                        obj.SegundoApellido = this.txtApellido2.Text;
+                        obj.Genero = "NA";
+                        obj.FechaNacimiento = DateTime.Now;
+                        obj.Correo = this.txtCorreo.Text;
+                        obj.Telefono = this.txtTelefono1.Text;
+                        obj.TelefonoAdisional = this.txtTelefono2.Text;
+                        obj.instrumento = this.cmbInstrumento.SelectedItem.ToString();
+                        obj.Profesion = this.cmbProfesion.SelectedItem.ToString();
+                        ProfesoresController Negocios = new ProfesoresController();
+                        Int32 FilasAfectadas = 0;
+                        #region Agregar
+                        if (Accion == "A")
+                        {
+                            FilasAfectadas = Negocios.Agregar(obj, Usuario);
+
+                            if (FilasAfectadas > 0)
+                            {
+                                MessageBox.Show("Se agrego el profesor", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                if (FilasAfectadas == -1)
+                                {
+                                    MessageBox.Show("El profesor se ha agregado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se pudo agregar el profesor!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        #endregion
+
+                        #region Modificar
+                        if (Accion == "M")
+                        {
+                            obj.Id_Profesor = int.Parse(this.txtId.Text);
+                            obj.ID_PERSONA = IdPersona;
+                            FilasAfectadas = Negocios.Modificar(obj, Usuario);
+                            if (FilasAfectadas > 0)
+                            {
+                                MessageBox.Show("Profesor modificado exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                if (FilasAfectadas == -1)
+                                {
+                                    MessageBox.Show("El profesor se ha modificado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se pudo modificar el profesor!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                        #endregion
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void llenar()
         {
@@ -53,10 +173,9 @@ namespace DosCuerdas.Vista
                 this.txtCorreo.Text = obj.Correo;
                 this.txtTelefono1.Text = obj.Telefono;
                 this.txtTelefono2.Text = obj.TelefonoAdisional;
-                this.txtId.Text = obj.Id_Estudiante.ToString();
-                this.txtClase.Text = obj.TipoClase;
-                this.txtHorario.Text = obj.Horario.ToString();
-                this.cmbSucursal.SelectedItem = obj.Sucursal;
+                this.txtId.Text = obj.Id_Profesor.ToString();
+                this.cmbInstrumento.SelectedItem = obj.instrumento;
+                this.cmbProfesion.SelectedItem = obj.Profesion;
                 IdPersona = obj.ID_PERSONA;
             }
         }
@@ -178,6 +297,36 @@ namespace DosCuerdas.Vista
             {
 
                 throw ex;
+            }
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var Existe = llenarDatosPersonales();
+                if (!Existe && Accion == "A")
+                {
+                    this.txtApellido1.Enabled = true;
+                    this.txtApellido2.Enabled = true;
+                    this.txtCorreo.Enabled = true;
+                    this.txtNombre.Enabled = true;
+                    this.txtTelefono1.Enabled = true;
+                    this.txtTelefono2.Enabled = true;
+                }
+                else if (Accion == "M")
+                {
+                    this.txtApellido1.Enabled = true;
+                    this.txtApellido2.Enabled = true;
+                    this.txtCorreo.Enabled = true;
+                    this.txtNombre.Enabled = true;
+                    this.txtTelefono1.Enabled = true;
+                    this.txtTelefono2.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
