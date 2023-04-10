@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MantenimientoUsuario));
             this.txtCClave = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,12 +60,14 @@
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.GrpDatosPersonales.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCClave
@@ -190,6 +193,7 @@
             this.btnAceptar.TabIndex = 83;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblDireccion
             // 
@@ -282,7 +286,7 @@
             this.GrpDatosPersonales.Controls.Add(this.cmbGenero);
             this.GrpDatosPersonales.Controls.Add(this.label5);
             this.GrpDatosPersonales.Controls.Add(this.label4);
-            this.GrpDatosPersonales.Controls.Add(this.textBox3);
+            this.GrpDatosPersonales.Controls.Add(this.txtCorreo);
             this.GrpDatosPersonales.Controls.Add(this.lblCedula);
             this.GrpDatosPersonales.Controls.Add(this.lblNombre);
             this.GrpDatosPersonales.Controls.Add(this.lblApellido1);
@@ -368,13 +372,13 @@
             this.label4.TabIndex = 99;
             this.label4.Text = "Correo";
             // 
-            // textBox3
+            // txtCorreo
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(137, 115);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(102, 20);
-            this.textBox3.TabIndex = 100;
+            this.txtCorreo.Enabled = false;
+            this.txtCorreo.Location = new System.Drawing.Point(137, 115);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(102, 20);
+            this.txtCorreo.TabIndex = 100;
             // 
             // groupBox2
             // 
@@ -414,6 +418,10 @@
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
             this.txtCedula.TabIndex = 109;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // MantenimientoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +439,7 @@
             this.GrpDatosPersonales.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,7 +471,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox GrpDatosPersonales;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTelefono2;
@@ -472,5 +481,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.MaskedTextBox txtCedula;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

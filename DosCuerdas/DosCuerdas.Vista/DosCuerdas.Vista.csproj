@@ -67,6 +67,7 @@
     <Compile Include="Ayuda.Designer.cs">
       <DependentUpon>Ayuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="ListaClientes.cs">
       <SubType>Form</SubType>
     </Compile>

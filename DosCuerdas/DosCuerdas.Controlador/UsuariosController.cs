@@ -1,4 +1,5 @@
 ﻿using DosCuerdas.Modelo;
+using DosCuerdas.Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace DosCuerdas.Controlador
     public class UsuariosController
     {
         #region Agregar
-        public int Agregar(EUsuarios obj, int IdUsuario)
+        public int Agregar(EUsuarios obj, int? IdUsuario)
         {
             try
             {
@@ -25,7 +26,7 @@ namespace DosCuerdas.Controlador
         #endregion
 
         #region Modificar
-        public int Modificar(EUsuarios obj, int IdUsuario)
+        public int Modificar(EUsuarios obj, int? IdUsuario)
         {
             try
             {
@@ -41,7 +42,7 @@ namespace DosCuerdas.Controlador
 
         #region Eliminar
 
-        public int Eliminar(int ID, int IdUsuario)
+        public int Eliminar(int ID, int? IdUsuario)
         {
             try
             {
