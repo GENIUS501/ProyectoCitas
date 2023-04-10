@@ -80,6 +80,7 @@ namespace DosCuerdas.Vista
                     {
                         this.Text = "Consultar Estudiante";
                         this.groupBox1.Enabled = false;
+                        this.groupBox2.Enabled = false;
                     }
                 }
             }
@@ -198,7 +199,7 @@ namespace DosCuerdas.Vista
                 this.txtId.Text = obj.Id_Estudiante.ToString();
                 this.txtClase.Text = obj.TipoClase;
                 this.txtHorario.Text = obj.Horario.ToString();
-                this.cmbSucursal.SelectedValue = obj.Sucursal;
+                this.cmbSucursal.SelectedItem = obj.Sucursal;
                 IdPersona = obj.ID_PERSONA;
             }
         }

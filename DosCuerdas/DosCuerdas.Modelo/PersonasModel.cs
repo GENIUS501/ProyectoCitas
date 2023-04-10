@@ -143,6 +143,7 @@ namespace DosCuerdas.Modelo
                 Lista = db.Personas
                 .Select(Item => new EPersonas
                 {
+                    ID_PERSONA=Item.ID_PERSONA,
                     Cedula = Item.Cedula,
                     Nombre = Item.Nombre,
                     PrimerApellido = Item.PrimerApellido,
