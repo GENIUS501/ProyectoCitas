@@ -33,7 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cmbInstrumento = new System.Windows.Forms.ComboBox();
+            this.cmbrol = new System.Windows.Forms.ComboBox();
             this.lblInstrumento = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -107,17 +107,18 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
             this.dateTimePicker1.TabIndex = 96;
             // 
-            // cmbInstrumento
+            // cmbrol
             // 
-            this.cmbInstrumento.FormattingEnabled = true;
-            this.cmbInstrumento.Items.AddRange(new object[] {
+            this.cmbrol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbrol.FormattingEnabled = true;
+            this.cmbrol.Items.AddRange(new object[] {
             "Administrador",
             "Servivio al Cliente",
             "Profesor"});
-            this.cmbInstrumento.Location = new System.Drawing.Point(141, 89);
-            this.cmbInstrumento.Name = "cmbInstrumento";
-            this.cmbInstrumento.Size = new System.Drawing.Size(100, 21);
-            this.cmbInstrumento.TabIndex = 95;
+            this.cmbrol.Location = new System.Drawing.Point(141, 89);
+            this.cmbrol.Name = "cmbrol";
+            this.cmbrol.Size = new System.Drawing.Size(125, 21);
+            this.cmbrol.TabIndex = 95;
             // 
             // lblInstrumento
             // 
@@ -277,7 +278,7 @@
             this.GrpDatosPersonales.Controls.Add(this.textBox5);
             this.GrpDatosPersonales.Controls.Add(this.label6);
             this.GrpDatosPersonales.Controls.Add(this.textBox4);
-            this.GrpDatosPersonales.Controls.Add(this.comboBox1);
+            this.GrpDatosPersonales.Controls.Add(this.cmbGenero);
             this.GrpDatosPersonales.Controls.Add(this.label5);
             this.GrpDatosPersonales.Controls.Add(this.label4);
             this.GrpDatosPersonales.Controls.Add(this.textBox3);
@@ -332,16 +333,17 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 104;
             // 
-            // comboBox1
+            // cmbGenero
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGenero.FormattingEnabled = true;
+            this.cmbGenero.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.comboBox1.Location = new System.Drawing.Point(11, 154);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 102;
+            this.cmbGenero.Location = new System.Drawing.Point(11, 154);
+            this.cmbGenero.Name = "cmbGenero";
+            this.cmbGenero.Size = new System.Drawing.Size(100, 21);
+            this.cmbGenero.TabIndex = 102;
             // 
             // label5
             // 
@@ -381,7 +383,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.lblInstrumento);
-            this.groupBox1.Controls.Add(this.cmbInstrumento);
+            this.groupBox1.Controls.Add(this.cmbrol);
             this.groupBox1.Location = new System.Drawing.Point(269, 58);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(282, 178);
@@ -418,7 +420,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox cmbInstrumento;
+        private System.Windows.Forms.ComboBox cmbrol;
         private System.Windows.Forms.Label lblInstrumento;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtCorreo;
@@ -444,7 +446,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbGenero;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

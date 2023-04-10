@@ -26,6 +26,26 @@ namespace DosCuerdas.Vista
 
         private void MantenimientoUsuario_Load(object sender, EventArgs e)
         {
+            #region Carga de listados
+            RolesController NegociosRoles = new RolesController();
+            this.cmbrol.DisplayMember = "Text";
+            this.cmbrol.ValueMember = "Value";
+
+            var RolesDataSource = NegociosRoles.Mostrar().Select(x => new
+            {
+                Text = x.NombreRol,
+                Value = x.Id_Rol
+            });
+            this.cmbrol.DataSource = RolesDataSource.ToArray();
+            this.cmbGenero.DisplayMember = "Text";
+            this.cmbGenero.ValueMember = "Value";
+            List<dynamic> Generos = new List<dynamic> {
+                new { Text = "Masculino", Value = "Masculino" },
+                new { Text = "Femenino", Value = "Femenino" },
+                new { Text = "No indicado", Value = "NA" }
+            };
+            this.cmbGenero.DataSource = Generos.ToArray();
+            #endregion
         }
     }
 }

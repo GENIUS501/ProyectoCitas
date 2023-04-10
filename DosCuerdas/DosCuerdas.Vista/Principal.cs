@@ -42,7 +42,7 @@ namespace DosCuerdas.Vista
         {
             try
             {
-                MantenimientoUsuario frm = new MantenimientoUsuario();
+                ListaUsuarios frm = new ListaUsuarios();
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -56,7 +56,7 @@ namespace DosCuerdas.Vista
         {
             try
             {
-                MantenimientoRoles frm = new MantenimientoRoles();
+                ListaRoles frm = new ListaRoles();
                 frm.MdiParent = this;
                 frm.Show();
             }
