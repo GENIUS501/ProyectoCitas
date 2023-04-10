@@ -43,8 +43,7 @@ namespace DosCuerdas.Vista
                 new { Text = "Masculino", Value = "Masculino" },
                 new { Text = "Femenino", Value = "Femenino" },
                 new { Text = "No indicado", Value = "NA" }
-            };
-            
+            };     
             var GenerosArray = Generos.Select(x => new { x.Text, x.Value }).ToArray();
             this.cmbGenero.DataSource = GenerosArray;
             #endregion
@@ -61,10 +60,11 @@ namespace DosCuerdas.Vista
                // llenar();
                 this.txtApellido1.Enabled = true;
                 this.txtApellido2.Enabled = true;
-                this.txtCorreo.Enabled = true;
+                this.txtClave.Enabled = true;
                 this.txtNombre.Enabled = true;
                 this.txtTelefono1.Enabled = true;
                 this.txtTelefono2.Enabled = true;
+                this.txtFechaNac.Enabled = true;
                 if (Accion == "C")
                 {
                     this.Text = "Consultar usuario";
