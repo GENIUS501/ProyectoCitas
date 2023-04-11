@@ -34,9 +34,10 @@ namespace DosCuerdas.Vista
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(2, 234);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DosCuerdas.Vista.ReporteEstudiantes.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 260);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(885, 267);
+            this.reportViewer1.Size = new System.Drawing.Size(893, 246);
             this.reportViewer1.TabIndex = 0;
             // 
             // ReporteEstudiantes

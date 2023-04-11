@@ -68,6 +68,10 @@ namespace DosCuerdas.Vista {
         
         private global::System.Data.DataRelation relationFk_USUARIOS_ROLES;
         
+        private global::System.Data.DataRelation relationFk_CITA_ESTUDIANTES1;
+        
+        private global::System.Data.DataRelation relationFk_Estudiantes_PERSONAS1;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -467,6 +471,8 @@ namespace DosCuerdas.Vista {
             this.relationFk_PROFESORES_PERSONAS = this.Relations["Fk_PROFESORES_PERSONAS"];
             this.relationFk_USUARIOS_PERSONAS = this.Relations["Fk_USUARIOS_PERSONAS"];
             this.relationFk_USUARIOS_ROLES = this.Relations["Fk_USUARIOS_ROLES"];
+            this.relationFk_CITA_ESTUDIANTES1 = this.Relations["Fk_CITA_ESTUDIANTES1"];
+            this.relationFk_Estudiantes_PERSONAS1 = this.Relations["Fk_Estudiantes_PERSONAS1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -543,6 +549,14 @@ namespace DosCuerdas.Vista {
                         this.tableRoles.Id_RolColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsuarios.Id_RolColumn}, false);
             this.Relations.Add(this.relationFk_USUARIOS_ROLES);
+            this.relationFk_CITA_ESTUDIANTES1 = new global::System.Data.DataRelation("Fk_CITA_ESTUDIANTES1", new global::System.Data.DataColumn[] {
+                        this.tableReporteEstudiante.Id_EstudianteColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCita.Id_EstudianteColumn}, false);
+            this.Relations.Add(this.relationFk_CITA_ESTUDIANTES1);
+            this.relationFk_Estudiantes_PERSONAS1 = new global::System.Data.DataRelation("Fk_Estudiantes_PERSONAS1", new global::System.Data.DataColumn[] {
+                        this.tablePersonas.ID_PERSONAColumn}, new global::System.Data.DataColumn[] {
+                        this.tableReporteEstudiante.ID_PERSONAColumn}, false);
+            this.Relations.Add(this.relationFk_Estudiantes_PERSONAS1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4026,6 +4040,10 @@ namespace DosCuerdas.Vista {
             
             private global::System.Data.DataColumn columnHorario;
             
+            private global::System.Data.DataColumn columnId_Estudiante;
+            
+            private global::System.Data.DataColumn columnID_PERSONA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ReporteEstudianteDataTable() {
@@ -4157,6 +4175,22 @@ namespace DosCuerdas.Vista {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Id_EstudianteColumn {
+                get {
+                    return this.columnId_Estudiante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ID_PERSONAColumn {
+                get {
+                    return this.columnID_PERSONA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4206,10 +4240,20 @@ namespace DosCuerdas.Vista {
                         TelefonoAdisional,
                         Sucursal,
                         TipoClase,
-                        Horario};
+                        Horario,
+                        null,
+                        null};
                 rowReporteEstudianteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReporteEstudianteRow);
                 return rowReporteEstudianteRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ReporteEstudianteRow FindById_EstudianteID_PERSONA(int Id_Estudiante, int ID_PERSONA) {
+                return ((ReporteEstudianteRow)(this.Rows.Find(new object[] {
+                            Id_Estudiante,
+                            ID_PERSONA})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4241,6 +4285,8 @@ namespace DosCuerdas.Vista {
                 this.columnSucursal = base.Columns["Sucursal"];
                 this.columnTipoClase = base.Columns["TipoClase"];
                 this.columnHorario = base.Columns["Horario"];
+                this.columnId_Estudiante = base.Columns["Id_Estudiante"];
+                this.columnID_PERSONA = base.Columns["ID_PERSONA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4270,6 +4316,13 @@ namespace DosCuerdas.Vista {
                 base.Columns.Add(this.columnTipoClase);
                 this.columnHorario = new global::System.Data.DataColumn("Horario", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHorario);
+                this.columnId_Estudiante = new global::System.Data.DataColumn("Id_Estudiante", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_Estudiante);
+                this.columnID_PERSONA = new global::System.Data.DataColumn("ID_PERSONA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_PERSONA);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId_Estudiante,
+                                this.columnID_PERSONA}, true));
                 this.columnCedula.AllowDBNull = false;
                 this.columnCedula.MaxLength = 20;
                 this.columnNombre.AllowDBNull = false;
@@ -4286,6 +4339,16 @@ namespace DosCuerdas.Vista {
                 this.columnTelefonoAdisional.MaxLength = 20;
                 this.columnSucursal.MaxLength = 20;
                 this.columnTipoClase.MaxLength = 20;
+                this.columnId_Estudiante.AutoIncrement = true;
+                this.columnId_Estudiante.AutoIncrementSeed = -1;
+                this.columnId_Estudiante.AutoIncrementStep = -1;
+                this.columnId_Estudiante.AllowDBNull = false;
+                this.columnId_Estudiante.ReadOnly = true;
+                this.columnID_PERSONA.AutoIncrement = true;
+                this.columnID_PERSONA.AutoIncrementSeed = -1;
+                this.columnID_PERSONA.AutoIncrementStep = -1;
+                this.columnID_PERSONA.AllowDBNull = false;
+                this.columnID_PERSONA.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4799,6 +4862,17 @@ namespace DosCuerdas.Vista {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Fk_CITA_USUARIOS"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ReporteEstudianteRow ReporteEstudianteRow {
+                get {
+                    return ((ReporteEstudianteRow)(this.GetParentRow(this.Table.ParentRelations["Fk_CITA_ESTUDIANTES1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Fk_CITA_ESTUDIANTES1"]);
                 }
             }
             
@@ -5371,6 +5445,17 @@ namespace DosCuerdas.Vista {
                 }
                 else {
                     return ((UsuariosRow[])(base.GetChildRows(this.Table.ChildRelations["Fk_USUARIOS_PERSONAS"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ReporteEstudianteRow[] GetReporteEstudianteRows() {
+                if ((this.Table.ChildRelations["Fk_Estudiantes_PERSONAS1"] == null)) {
+                    return new ReporteEstudianteRow[0];
+                }
+                else {
+                    return ((ReporteEstudianteRow[])(base.GetChildRows(this.Table.ChildRelations["Fk_Estudiantes_PERSONAS1"])));
                 }
             }
         }
@@ -6011,6 +6096,39 @@ namespace DosCuerdas.Vista {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Id_Estudiante {
+                get {
+                    return ((int)(this[this.tableReporteEstudiante.Id_EstudianteColumn]));
+                }
+                set {
+                    this[this.tableReporteEstudiante.Id_EstudianteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ID_PERSONA {
+                get {
+                    return ((int)(this[this.tableReporteEstudiante.ID_PERSONAColumn]));
+                }
+                set {
+                    this[this.tableReporteEstudiante.ID_PERSONAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PersonasRow PersonasRow {
+                get {
+                    return ((PersonasRow)(this.GetParentRow(this.Table.ParentRelations["Fk_Estudiantes_PERSONAS1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Fk_Estudiantes_PERSONAS1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCorreoNull() {
                 return this.IsNull(this.tableReporteEstudiante.CorreoColumn);
             }
@@ -6079,6 +6197,17 @@ namespace DosCuerdas.Vista {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetHorarioNull() {
                 this[this.tableReporteEstudiante.HorarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CitaRow[] GetCitaRows() {
+                if ((this.Table.ChildRelations["Fk_CITA_ESTUDIANTES1"] == null)) {
+                    return new CitaRow[0];
+                }
+                else {
+                    return ((CitaRow[])(base.GetChildRows(this.Table.ChildRelations["Fk_CITA_ESTUDIANTES1"])));
+                }
             }
         }
         
@@ -10731,6 +10860,8 @@ SELECT Id_Usuario, Id_Rol, ID_PERSONA, Usuario, Contrasena, Estado FROM Usuarios
             tableMapping.ColumnMappings.Add("Sucursal", "Sucursal");
             tableMapping.ColumnMappings.Add("TipoClase", "TipoClase");
             tableMapping.ColumnMappings.Add("Horario", "Horario");
+            tableMapping.ColumnMappings.Add("Id_Estudiante", "Id_Estudiante");
+            tableMapping.ColumnMappings.Add("ID_PERSONA", "ID_PERSONA");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10748,7 +10879,7 @@ SELECT Id_Usuario, Id_Rol, ID_PERSONA, Usuario, Contrasena, Estado FROM Usuarios
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Personas.Cedula, Personas.Nombre, Personas.PrimerApellido, Personas.SegundoApellido, Personas.Genero, Personas.FechaNacimiento, Personas.Correo, Personas.Telefono, Personas.TelefonoAdisional, 
-                         Estudiantes.Sucursal, Estudiantes.TipoClase, Estudiantes.Horario
+                         Estudiantes.Sucursal, Estudiantes.TipoClase, Estudiantes.Horario, Estudiantes.Id_Estudiante, Personas.ID_PERSONA
 FROM            Personas INNER JOIN
                          Estudiantes ON Personas.ID_PERSONA = Estudiantes.ID_PERSONA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

@@ -108,7 +108,20 @@ namespace DosCuerdas.Vista
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        private void reporteDeEstudiantreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ReporteEstudiantes frm = new ReporteEstudiantes();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

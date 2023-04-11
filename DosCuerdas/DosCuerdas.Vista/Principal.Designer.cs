@@ -180,6 +180,7 @@
             this.reporteDeEstudiantreToolStripMenuItem.Name = "reporteDeEstudiantreToolStripMenuItem";
             this.reporteDeEstudiantreToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.reporteDeEstudiantreToolStripMenuItem.Text = "Reporte de Estudiantre";
+            this.reporteDeEstudiantreToolStripMenuItem.Click += new System.EventHandler(this.reporteDeEstudiantreToolStripMenuItem_Click);
             // 
             // reporteDeClientesToolStripMenuItem
             // 
