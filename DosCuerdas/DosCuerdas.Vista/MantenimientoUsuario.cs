@@ -61,7 +61,7 @@ namespace DosCuerdas.Vista
             {
                 this.Text = "Modificar usuario";
                 this.txtId.Enabled = false;
-                // llenar();
+                llenar();
                 this.txtApellido1.Enabled = true;
                 this.txtApellido2.Enabled = true;
                 this.txtClave.Enabled = true;
@@ -131,6 +131,9 @@ namespace DosCuerdas.Vista
                 this.txtFechaNac.Text = obj.FechaNacimiento.ToString();
                 this.cmbGenero.SelectedValue = obj.Genero;
                 IdPersona = obj.ID_PERSONA;
+                UsuarioViniente = obj.Usuario;
+                this.txtUsuario.Text = obj.Usuario;
+                this.txtClave.Text = "********";
             }
         }
         private bool llenarDatosPersonales()
@@ -333,19 +336,19 @@ namespace DosCuerdas.Vista
 
                             if (FilasAfectadas > 0)
                             {
-                                MessageBox.Show("Se agrego el estudiante", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Se agrego el usuario", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
                             {
                                 if (FilasAfectadas == -1)
                                 {
-                                    MessageBox.Show("El estudiante se ha agregado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    MessageBox.Show("El usuario se ha agregado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     this.Close();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se pudo agregar el estudiante!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("No se pudo agregar el usuario!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                         }
@@ -356,22 +359,27 @@ namespace DosCuerdas.Vista
                         {
                             obj.Id_Usuario = int.Parse(this.txtId.Text);
                             obj.ID_PERSONA = IdPersona;
+                            obj.Contrasena = this.txtClave.Text;
+                            if (this.txtClave.Text != "********" || this.txtUsuario.Text != UsuarioViniente)
+                            {
+                                obj.Contrasena = Helper.EncodePassword(string.Concat(this.txtUsuario.Text.ToString(), this.txtClave.ToString()));
+                            }
                             FilasAfectadas = Negocios.Modificar(obj, Usuario);
                             if (FilasAfectadas > 0)
                             {
-                                MessageBox.Show("Estudiante modificado exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Usuario modificado exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
                             {
                                 if (FilasAfectadas == -1)
                                 {
-                                    MessageBox.Show("El estudiante se ha modificado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    MessageBox.Show("El usuario se ha modificado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     this.Close();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No se pudo modificar el estudiante!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("No se pudo modificar el usuario!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                         }

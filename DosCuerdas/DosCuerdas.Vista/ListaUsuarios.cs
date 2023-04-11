@@ -1,5 +1,6 @@
 ﻿using DosCuerdas.Controlador;
 using DosCuerdas.Modelo;
+using DosCuerdas.Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

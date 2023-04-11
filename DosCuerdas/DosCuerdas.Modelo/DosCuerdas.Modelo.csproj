@@ -109,6 +109,9 @@
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
     <Compile Include="RolesModel.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>DosCuerdas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>

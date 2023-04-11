@@ -69,7 +69,7 @@ create table Usuarios(
 	Id_Rol int,
 	ID_PERSONA INT,
 	Usuario varchar(20),
-	Contrasena varchar(20),
+	Contrasena varchar(max),
 	Estado int,
 	CONSTRAINT Fk_USUARIOS_ROLES FOREIGN KEY(Id_Rol) REFERENCES Roles(Id_Rol),
 	CONSTRAINT Fk_USUARIOS_PERSONAS FOREIGN KEY(ID_PERSONA) REFERENCES Personas(ID_PERSONA)

@@ -40,7 +40,7 @@ namespace DosCuerdas.Modelo
                         throw new Exception("El usuario ya existe.");
                     }
                     Usuarios Objbd = new Usuarios();
-                    Objbd.ID_PERSONA = obj.ID_PERSONA;
+                    Objbd.ID_PERSONA = IdPersona;
                     Objbd.Usuario = obj.Usuario;
                     Objbd.Contrasena = obj.Contrasena;
                     Objbd.Id_Rol = obj.Id_Rol;

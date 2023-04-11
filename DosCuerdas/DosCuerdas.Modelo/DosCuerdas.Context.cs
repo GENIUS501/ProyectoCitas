@@ -34,6 +34,7 @@ namespace DosCuerdas.Modelo
         public virtual DbSet<Personas> Personas { get; set; }
         public virtual DbSet<Profesores> Profesores { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
     }
 }
