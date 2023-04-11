@@ -59,6 +59,8 @@ namespace DosCuerdas.Vista
             }
             if (Accion == "M" || Accion == "C")
             {
+                this.txtCClave.Visible = false;
+                this.label3.Visible = false;
                 this.Text = "Modificar usuario";
                 this.txtId.Enabled = false;
                 llenar();

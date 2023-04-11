@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DosCuerdas.Vista
 {
-    public partial class RegistroEstudiantes : Form
+    public partial class ReporteEstudiantes : Form
     {
-        public RegistroEstudiantes()
+        public ReporteEstudiantes()
         {
             InitializeComponent();
         }

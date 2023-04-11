@@ -85,6 +85,7 @@
     <Compile Include="Entidades\EBitacora_movimientos.cs" />
     <Compile Include="Entidades\EClientes.cs" />
     <Compile Include="Entidades\EEstudiantes.cs" />
+    <Compile Include="Entidades\EPermisos.cs" />
     <Compile Include="Entidades\EPersonas.cs" />
     <Compile Include="Entidades\EProfesores.cs" />
     <Compile Include="Entidades\ERoles.cs" />
