@@ -16,5 +16,11 @@ namespace DosCuerdas.Vista
         {
             InitializeComponent();
         }
+
+        private void ReporteEstudiantes_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
