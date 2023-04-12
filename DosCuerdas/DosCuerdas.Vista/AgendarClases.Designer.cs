@@ -29,6 +29,7 @@ namespace DosCuerdas.Vista
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgendarClases));
             this.cbo_hora = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,10 +53,12 @@ namespace DosCuerdas.Vista
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtCedulaProfesor = new System.Windows.Forms.MaskedTextBox();
             this.txtCedulaEstudiante = new System.Windows.Forms.MaskedTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_profesores)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbo_hora
@@ -287,6 +290,10 @@ namespace DosCuerdas.Vista
             this.txtCedulaEstudiante.Size = new System.Drawing.Size(101, 20);
             this.txtCedulaEstudiante.TabIndex = 115;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AgendarClases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +312,7 @@ namespace DosCuerdas.Vista
             ((System.ComponentModel.ISupportInitialize)(this.dat_profesores)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,5 +341,6 @@ namespace DosCuerdas.Vista
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.MaskedTextBox txtCedulaEstudiante;
         private System.Windows.Forms.MaskedTextBox txtCedulaProfesor;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
