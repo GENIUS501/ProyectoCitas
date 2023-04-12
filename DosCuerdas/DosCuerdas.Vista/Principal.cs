@@ -1,4 +1,5 @@
-﻿using DosCuerdas.Modelo.Entidades;
+﻿using DosCuerdas.Controlador;
+using DosCuerdas.Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,33 @@ namespace DosCuerdas.Vista
         }
         private void salirToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Cerrar();
         }
-
+        private void Cerrar()
+        {
+            try
+            {
+                EBitacora_Sesiones Ses = new EBitacora_Sesiones();
+                Bitacora_SesionesController Negocios = new Bitacora_SesionesController();
+                Int32 FilasAfectadas;
+                Ses.codigo_ingreso_salida = Idsession;
+                Ses.fecha_hora_salida = DateTime.Now;
+                FilasAfectadas = Negocios.Modificar(Ses);
+                if (FilasAfectadas > 0)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    MessageBox.Show("Error al cerrar session!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -172,6 +197,30 @@ namespace DosCuerdas.Vista
         private void Principal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EBitacora_Sesiones Ses = new EBitacora_Sesiones();
+            Bitacora_SesionesController Negocios = new Bitacora_SesionesController();
+            Int32 FilasAfectadas;
+            Ses.codigo_ingreso_salida = Idsession;
+            Ses.fecha_hora_salida = DateTime.Now;
+            FilasAfectadas = Negocios.Modificar(Ses);
+            if (FilasAfectadas > 0)
+            {
+                Application.Restart();
+            }
+            else
+            {
+                MessageBox.Show("Error al cerrar session!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Restart();
+            }
+        }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cerrar();
         }
     }
 }
