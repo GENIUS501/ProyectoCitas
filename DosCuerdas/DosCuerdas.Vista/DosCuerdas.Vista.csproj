@@ -179,6 +179,12 @@
     <Compile Include="ReporteEstudiantes.Designer.cs">
       <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteProfesores.Designer.cs">
+      <DependentUpon>ReporteProfesores.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
@@ -230,6 +236,10 @@
     <EmbeddedResource Include="ReporteEstudiantes.rdlc" />
     <EmbeddedResource Include="ReporteEstudiantes.resx">
       <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteProfesores.rdlc" />
+    <EmbeddedResource Include="ReporteProfesores.resx">
+      <DependentUpon>ReporteProfesores.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DosCuerdasDataSet.xsc">
       <DependentUpon>DosCuerdasDataSet.xsd</DependentUpon>

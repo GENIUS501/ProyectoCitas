@@ -1,5 +1,4 @@
 ﻿using DosCuerdas.Controlador;
-using DosCuerdas.Modelo.Entidades;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -13,19 +12,19 @@ using System.Windows.Forms;
 
 namespace DosCuerdas.Vista
 {
-    public partial class ReporteEstudiantes : Form
+    public partial class ReporteProfesores : Form
     {
         public string Usuario { get; set; }
-        public ReporteEstudiantes()
+        public ReporteProfesores()
         {
             InitializeComponent();
         }
 
-        private void ReporteEstudiantes_Load(object sender, EventArgs e)
+        private void ReporteProfesores_Load(object sender, EventArgs e)
         {
             try
             {
-                EstudiantesController Controlador = new EstudiantesController();
+                ProfesoresController Controlador = new ProfesoresController();
                 var datasource = Controlador.Mostrar();
                 ReportDataSource Rds = new ReportDataSource("DataSet1", datasource);
                 this.reportViewer1.LocalReport.DataSources.Clear();
@@ -46,10 +45,10 @@ namespace DosCuerdas.Vista
         {
             try
             {
-                if (this.txt_buscar_id_estudiante.Text != "")
+                if (this.txt_buscar_id_profesor.Text != "")
                 {
-                    EstudiantesController Controlador = new EstudiantesController();
-                    var datasource = Controlador.Mostrar().Where(x=>x.Cedula.Contains(this.txt_buscar_id_estudiante.Text));
+                    ProfesoresController Controlador = new ProfesoresController();
+                    var datasource = Controlador.Mostrar().Where(x => x.Cedula.Contains(this.txt_buscar_id_profesor.Text));
                     ReportDataSource Rds = new ReportDataSource("DataSet1", datasource);
                     this.reportViewer1.LocalReport.DataSources.Clear();
                     this.reportViewer1.LocalReport.DataSources.Add(Rds);
@@ -72,7 +71,7 @@ namespace DosCuerdas.Vista
             {
                 if (this.txt_nombre.Text != "")
                 {
-                    EstudiantesController Controlador = new EstudiantesController();
+                    ProfesoresController Controlador = new ProfesoresController();
                     var datasource = Controlador.Mostrar().Where(x => x.Nombre.ToLower().Contains(this.txt_nombre.Text.ToLower()));
                     ReportDataSource Rds = new ReportDataSource("DataSet1", datasource);
                     this.reportViewer1.LocalReport.DataSources.Clear();

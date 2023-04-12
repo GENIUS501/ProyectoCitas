@@ -193,6 +193,7 @@
             this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
             this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.reporteDeToolStripMenuItem.Text = "Reporte de Profesores";
+            this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
             // 
             // reporteDeUsuariosToolStripMenuItem
             // 
