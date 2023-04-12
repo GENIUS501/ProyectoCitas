@@ -47,8 +47,8 @@ namespace DosCuerdas.Vista
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtCedulaProfesor = new System.Windows.Forms.MaskedTextBox();
@@ -210,8 +210,8 @@ namespace DosCuerdas.Vista
             // 
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.txtObservaciones);
+            this.groupBox2.Controls.Add(this.txtFecha);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cbo_hora);
             this.groupBox2.Location = new System.Drawing.Point(448, 12);
@@ -239,20 +239,20 @@ namespace DosCuerdas.Vista
             this.label6.TabIndex = 4;
             this.label6.Text = "Fecha";
             // 
-            // textBox4
+            // txtObservaciones
             // 
-            this.textBox4.Location = new System.Drawing.Point(23, 170);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(311, 161);
-            this.textBox4.TabIndex = 3;
+            this.txtObservaciones.Location = new System.Drawing.Point(23, 170);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(311, 161);
+            this.txtObservaciones.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // txtFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(22, 107);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.txtFecha.Location = new System.Drawing.Point(22, 107);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(200, 20);
+            this.txtFecha.TabIndex = 2;
             // 
             // btnCancelar
             // 
@@ -263,6 +263,7 @@ namespace DosCuerdas.Vista
             this.btnCancelar.TabIndex = 88;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -273,6 +274,7 @@ namespace DosCuerdas.Vista
             this.btnAceptar.TabIndex = 87;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtCedulaProfesor
             // 
@@ -298,11 +300,13 @@ namespace DosCuerdas.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "AgendarClases";
             this.Text = "AgendarClases";
             this.Load += new System.EventHandler(this.AgendarClases_Load);
@@ -335,8 +339,8 @@ namespace DosCuerdas.Vista
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.DateTimePicker txtFecha;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.MaskedTextBox txtCedulaEstudiante;
