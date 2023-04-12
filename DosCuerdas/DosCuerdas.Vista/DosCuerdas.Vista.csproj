@@ -233,6 +233,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAgenda.rdlc" />
     <EmbeddedResource Include="ReporteEstudiantes.rdlc" />
     <EmbeddedResource Include="ReporteEstudiantes.resx">
       <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
