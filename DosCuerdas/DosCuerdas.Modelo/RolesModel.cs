@@ -12,8 +12,8 @@ namespace DosCuerdas.Modelo
     public class RolesModel
     {
         DosCuerdasEntities db = new DosCuerdasEntities();
-        //EBitacora_movimientos Entidad_Movimientos = new EBitacora_movimientos();
-        //DBitacora_movimientos Movimientos = new DBitacora_movimientos();
+        EBitacora_movimientos Entidad_Movimientos = new EBitacora_movimientos();
+        DBitacora_movimientos Movimientos = new DBitacora_movimientos();
         #region Agregar
         public int Agregar(ERoles obj, int Id_Usuario)
         {
@@ -25,7 +25,7 @@ namespace DosCuerdas.Modelo
                     Objbd.NombreRol = obj.Descripcion;
                     Objbd.Descripcion = obj.Descripcion;
                     db.Entry(Objbd).State = EntityState.Added;
-                    //db.Roles.Add(Objbd);
+                    db.Roles.Add(Objbd);
 
                     db.SaveChanges();
 
@@ -34,11 +34,11 @@ namespace DosCuerdas.Modelo
                     if (Resultado > 0)
                     {
                         Ts.Complete();
-                        //Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        //Entidad_Movimientos.modulo = "Roles";
-                        //Entidad_Movimientos.tipo_movimiento = "Agregar";
-                        //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
-                        //Movimientos.Agregar(Entidad_Movimientos);
+                        Entidad_Movimientos.Id_Usuario = Id_Usuario;
+                        Entidad_Movimientos.modulo = "Roles";
+                        Entidad_Movimientos.tipo_movimiento = "Agregar";
+                        Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
+                        Movimientos.Agregar(Entidad_Movimientos);
                         return Resultado;
                     }
                     else
@@ -70,11 +70,11 @@ namespace DosCuerdas.Modelo
                     if (Resultado > 0)
                     {
                         Ts.Complete();
-                        //Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        //Entidad_Movimientos.modulo = "Roles";
-                        //Entidad_Movimientos.tipo_movimiento = "Modificar";
-                        //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
-                        //Movimientos.Agregar(Entidad_Movimientos);
+                        Entidad_Movimientos.Id_Usuario = Id_Usuario;
+                        Entidad_Movimientos.modulo = "Roles";
+                        Entidad_Movimientos.tipo_movimiento = "Modificar";
+                        Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
+                        Movimientos.Agregar(Entidad_Movimientos);
                         return Resultado;
                     }
                     Ts.Dispose();
@@ -101,11 +101,11 @@ namespace DosCuerdas.Modelo
                     if (Resultado > 0)
                     {
                         Ts.Complete();
-                        //Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        //Entidad_Movimientos.modulo = "Roles";
-                        //Entidad_Movimientos.tipo_movimiento = "Eliminar";
-                        //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
-                        //Movimientos.Agregar(Entidad_Movimientos);
+                        Entidad_Movimientos.Id_Usuario = Id_Usuario;
+                        Entidad_Movimientos.modulo = "Roles";
+                        Entidad_Movimientos.tipo_movimiento = "Eliminar";
+                        Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
+                        Movimientos.Agregar(Entidad_Movimientos);
                         return Resultado;
                     }
                     Ts.Dispose();

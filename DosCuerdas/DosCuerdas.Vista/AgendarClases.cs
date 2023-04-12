@@ -14,7 +14,7 @@ namespace DosCuerdas.Vista
     public partial class AgendarClases : Form
     {
         #region Variables
-        public string Usuario { get; set; }
+        public int Usuario { get; set; }
         int Profesor = -1;
         int Estudiante = -1;
         #endregion

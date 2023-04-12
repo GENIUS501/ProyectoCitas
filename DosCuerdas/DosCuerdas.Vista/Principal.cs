@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DosCuerdas.Modelo.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,10 @@ namespace DosCuerdas.Vista
 {
     public partial class Principal : Form
     {
-        private AcercaDe ingrearAc;
+        #region Variables
+        public int Idsession { get; set; }
+        public EUsuarios UsuarioLogueado { get; set; }
+        #endregion
         public Principal()
         {
             InitializeComponent();
@@ -27,7 +31,7 @@ namespace DosCuerdas.Vista
         {
             try
             {
-                ingrearAc = new AcercaDe();
+                AcercaDe ingrearAc = new AcercaDe();
                 ingrearAc.MdiParent = this;
                 ingrearAc.Show();
             }
@@ -43,6 +47,8 @@ namespace DosCuerdas.Vista
             try
             {
                 ListaUsuarios frm = new ListaUsuarios();
+                frm.Usuario = UsuarioLogueado.Id_Usuario;
+                frm.Id_Rol = UsuarioLogueado.Id_Rol??0;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -57,6 +63,8 @@ namespace DosCuerdas.Vista
             try
             {
                 ListaRoles frm = new ListaRoles();
+                frm.Usuario = UsuarioLogueado.Id_Usuario;
+                frm.Id_Rol = UsuarioLogueado.Id_Rol ?? 0;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -71,6 +79,8 @@ namespace DosCuerdas.Vista
             try
             {
                 ListaClientes frm = new ListaClientes();
+                frm.Usuario = UsuarioLogueado.Id_Usuario;
+                frm.Id_Rol = UsuarioLogueado.Id_Rol ?? 0;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -86,6 +96,8 @@ namespace DosCuerdas.Vista
             try
             {
                 ListaEstudiantes frm = new ListaEstudiantes();
+                frm.Usuario = UsuarioLogueado.Id_Usuario;
+                frm.Id_Rol = UsuarioLogueado.Id_Rol ?? 0;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -101,6 +113,8 @@ namespace DosCuerdas.Vista
             try
             {
                 ListaProfesores frm = new ListaProfesores();
+                frm.Usuario = UsuarioLogueado.Id_Usuario;
+                frm.Id_Rol = UsuarioLogueado.Id_Rol ?? 0;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -115,6 +129,7 @@ namespace DosCuerdas.Vista
             try
             {
                 ReporteEstudiantes frm = new ReporteEstudiantes();
+                frm.Usuario = UsuarioLogueado.Usuario;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -129,6 +144,7 @@ namespace DosCuerdas.Vista
             try
             {
                 ReporteProfesores frm = new ReporteProfesores();
+                frm.Usuario = UsuarioLogueado.Usuario;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -143,6 +159,7 @@ namespace DosCuerdas.Vista
             try
             {
                 AgendarClases frm = new AgendarClases();
+                frm.Usuario = UsuarioLogueado.Id_Usuario;
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -150,6 +167,11 @@ namespace DosCuerdas.Vista
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

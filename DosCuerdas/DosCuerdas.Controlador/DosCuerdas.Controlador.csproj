@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora_SesionesController.cs" />
     <Compile Include="ClientesController.cs" />
     <Compile Include="EstudiantesController.cs" />
     <Compile Include="PersonasController.cs" />

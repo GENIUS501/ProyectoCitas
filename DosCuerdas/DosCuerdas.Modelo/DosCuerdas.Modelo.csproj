@@ -58,6 +58,7 @@
     <Compile Include="Bitacora_Sesiones.cs">
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bitacora_SesionesModel.cs" />
     <Compile Include="Cita.cs">
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
@@ -65,7 +66,6 @@
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientesModel.cs" />
-    <Compile Include="Datos.cs" />
     <Compile Include="DBitacora_movimientos.cs" />
     <Compile Include="DosCuerdas.Context.cs">
       <AutoGen>True</AutoGen>
@@ -83,6 +83,7 @@
       <DependentUpon>DosCuerdas.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entidades\EBitacora_movimientos.cs" />
+    <Compile Include="Entidades\EBitacora_Sesiones.cs" />
     <Compile Include="Entidades\EClientes.cs" />
     <Compile Include="Entidades\EEstudiantes.cs" />
     <Compile Include="Entidades\EPermisos.cs" />

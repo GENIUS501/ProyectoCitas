@@ -53,6 +53,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.GrpDatosPersonales = new System.Windows.Forms.GroupBox();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTelefono2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.GrpDatosPersonales.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,6 +74,7 @@
             // 
             this.txtCClave.Location = new System.Drawing.Point(141, 140);
             this.txtCClave.Name = "txtCClave";
+            this.txtCClave.PasswordChar = '*';
             this.txtCClave.Size = new System.Drawing.Size(125, 20);
             this.txtCClave.TabIndex = 100;
             // 
@@ -140,6 +141,7 @@
             // 
             this.txtClave.Location = new System.Drawing.Point(13, 140);
             this.txtClave.Name = "txtClave";
+            this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(100, 20);
             this.txtClave.TabIndex = 90;
             // 
@@ -304,6 +306,25 @@
             this.GrpDatosPersonales.TabStop = false;
             this.GrpDatosPersonales.Text = "Datos Personales";
             // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(139, 32);
+            this.txtCedula.Mask = "000000000000";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(100, 20);
+            this.txtCedula.TabIndex = 109;
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(245, 31);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar.TabIndex = 104;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -399,25 +420,6 @@
             this.groupBox2.TabIndex = 103;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de acceso";
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
-            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_buscar.Location = new System.Drawing.Point(245, 31);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
-            this.btn_buscar.TabIndex = 104;
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(139, 32);
-            this.txtCedula.Mask = "000000000000";
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 109;
             // 
             // errorProvider1
             // 

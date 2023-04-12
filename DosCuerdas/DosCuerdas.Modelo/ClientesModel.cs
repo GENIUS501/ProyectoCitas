@@ -45,11 +45,11 @@ namespace DosCuerdas.Modelo
                     if (Resultado > 0)
                     {
                         Ts.Complete();
-                        //Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        //Entidad_Movimientos.modulo = "Clientes";
-                        //Entidad_Movimientos.tipo_movimiento = "Agregar";
-                        //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
-                        //Movimientos.Agregar(Entidad_Movimientos);
+                        Entidad_Movimientos.Id_Usuario = Id_Usuario;
+                        Entidad_Movimientos.modulo = "Clientes";
+                        Entidad_Movimientos.tipo_movimiento = "Agregar";
+                        Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
+                        Movimientos.Agregar(Entidad_Movimientos);
                         return Resultado;
                     }
                     else
@@ -83,11 +83,11 @@ namespace DosCuerdas.Modelo
                     if (Resultado > 0)
                     {
                         Ts.Complete();
-                        //Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        //Entidad_Movimientos.modulo = "Clientes";
-                        //Entidad_Movimientos.tipo_movimiento = "Modificar";
-                        //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
-                        //Movimientos.Agregar(Entidad_Movimientos);
+                        Entidad_Movimientos.Id_Usuario = Id_Usuario;
+                        Entidad_Movimientos.modulo = "Clientes";
+                        Entidad_Movimientos.tipo_movimiento = "Modificar";
+                        Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
+                        Movimientos.Agregar(Entidad_Movimientos);
                         return Resultado;
                     }
                     Ts.Dispose();
@@ -114,11 +114,11 @@ namespace DosCuerdas.Modelo
                     if (Resultado > 0)
                     {
                         Ts.Complete();
-                        //Entidad_Movimientos.Id_Usuario = Id_Usuario;
-                        //Entidad_Movimientos.modulo = "Clientes";
-                        //Entidad_Movimientos.tipo_movimiento = "Eliminar";
-                        //Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
-                        //Movimientos.Agregar(Entidad_Movimientos);
+                        Entidad_Movimientos.Id_Usuario = Id_Usuario;
+                        Entidad_Movimientos.modulo = "Clientes";
+                        Entidad_Movimientos.tipo_movimiento = "Eliminar";
+                        Entidad_Movimientos.fecha_hora_movimiento = DateTime.Now;
+                        Movimientos.Agregar(Entidad_Movimientos);
                         return Resultado;
                     }
                     Ts.Dispose();
