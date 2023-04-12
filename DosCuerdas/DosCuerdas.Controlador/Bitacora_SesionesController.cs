@@ -53,6 +53,18 @@ namespace DosCuerdas.Controlador
                 throw ex;
             }
         }
+        public List<dynamic> Mostrara()
+        {
+            try
+            {
+                Bitacora_SesionesModel db = new Bitacora_SesionesModel();
+                return db.Mostrara();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

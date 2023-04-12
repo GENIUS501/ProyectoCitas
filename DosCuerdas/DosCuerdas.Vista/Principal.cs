@@ -222,5 +222,20 @@ namespace DosCuerdas.Vista
         {
             Cerrar();
         }
+
+        private void bitcoraDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BitacoraSesiones frm = new BitacoraSesiones();
+                frm.Usuario = UsuarioLogueado.Usuario;
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

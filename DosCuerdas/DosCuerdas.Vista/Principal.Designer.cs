@@ -217,6 +217,7 @@
             this.bitcoraDeToolStripMenuItem.Name = "bitcoraDeToolStripMenuItem";
             this.bitcoraDeToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.bitcoraDeToolStripMenuItem.Text = "Bitcora de Ingreso";
+            this.bitcoraDeToolStripMenuItem.Click += new System.EventHandler(this.bitcoraDeToolStripMenuItem_Click);
             // 
             // bitacoraToolStripMenuItem
             // 
