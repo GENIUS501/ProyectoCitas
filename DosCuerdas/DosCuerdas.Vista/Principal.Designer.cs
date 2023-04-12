@@ -116,6 +116,7 @@
             this.mantenimieToolStripMenuItem.Name = "mantenimieToolStripMenuItem";
             this.mantenimieToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.mantenimieToolStripMenuItem.Text = "Agendar Clases";
+            this.mantenimieToolStripMenuItem.Click += new System.EventHandler(this.mantenimieToolStripMenuItem_Click);
             // 
             // mantenimientosToolStripMenuItem
             // 

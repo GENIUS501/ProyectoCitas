@@ -82,6 +82,12 @@
     <Compile Include="AcercaDe.Designer.cs">
       <DependentUpon>AcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgendarClases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendarClases.Designer.cs">
+      <DependentUpon>AgendarClases.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ayuda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgendarClases.resx">
+      <DependentUpon>AgendarClases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ayuda.resx">
       <DependentUpon>Ayuda.cs</DependentUpon>
