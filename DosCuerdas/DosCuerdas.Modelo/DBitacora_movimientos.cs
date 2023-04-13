@@ -45,23 +45,26 @@ namespace DosCuerdas.Modelo
             }
         }
         #endregion
+
         #region Listar
-        public List<EBitacora_movimientos> Mostrar()
+        public List<dynamic> Mostrar()
         {
             try
             {
-                List<EBitacora_movimientos> Obj = new List<EBitacora_movimientos>();
-                var Objbd = db.Bitacora_Movimientos.ToList();
-                Obj = db.Bitacora_Movimientos
-                .Select(Item => new EBitacora_movimientos
-                {
-                    Id_Usuario = Item.Id_Usuario,
-                    fecha_hora_movimiento = Item.fecha_hora_movimiento,
-                    tipo_movimiento = Item.tipo_movimiento,
-                    modulo = Item.modulo,
-                    codigo_movimiento_usuario = Item.codigo_movimiento_usuario
-                }).ToList();
-                return Obj;
+                var Objbd = new List<dynamic>(
+                    db.Bitacora_Movimientos
+                        .Select(Item => new
+                        {
+                            Usuario = Item.Usuarios.Usuario,
+                            fecha_hora_movimiento = Item.fecha_hora_movimiento,
+                            tipo_movimiento = Item.tipo_movimiento,
+                            modulo = Item.modulo,
+                            codigo_movimiento_usuario = Item.codigo_movimiento_usuario
+                        })
+                        .ToList()
+                );
+
+                return Objbd;
             }
             catch (Exception ex)
             {

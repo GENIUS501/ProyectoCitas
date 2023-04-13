@@ -94,6 +94,12 @@
     <Compile Include="Ayuda.Designer.cs">
       <DependentUpon>Ayuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="BitacoraMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitacoraMovimientos.Designer.cs">
+      <DependentUpon>BitacoraMovimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="BitacoraSesiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ayuda.resx">
       <DependentUpon>Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitacoraMovimientos.rdlc" />
+    <EmbeddedResource Include="BitacoraMovimientos.resx">
+      <DependentUpon>BitacoraMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BitacoraSesiones.rdlc" />
     <EmbeddedResource Include="BitacoraSesiones.resx">

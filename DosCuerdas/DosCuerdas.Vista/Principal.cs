@@ -237,5 +237,20 @@ namespace DosCuerdas.Vista
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BitacoraMovimientos frm = new BitacoraMovimientos();
+                frm.Usuario = UsuarioLogueado.Usuario;
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

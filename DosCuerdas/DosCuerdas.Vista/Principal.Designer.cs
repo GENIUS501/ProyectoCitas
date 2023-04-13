@@ -224,6 +224,7 @@
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
             this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.bitacoraToolStripMenuItem.Text = "Bitacora de Movimiento";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
             // Principal
             // 
