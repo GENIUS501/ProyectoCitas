@@ -53,7 +53,7 @@ namespace DosCuerdas.Controlador
                 throw ex;
             }
         }
-        public List<dynamic> Mostrara()
+        public List<EReporteBitacoraIngresos> Mostrara()
         {
             try
             {

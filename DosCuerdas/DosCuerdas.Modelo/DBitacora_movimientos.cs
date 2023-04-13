@@ -47,13 +47,14 @@ namespace DosCuerdas.Modelo
         #endregion
 
         #region Listar
-        public List<dynamic> Mostrar()
+        public List<EReporteBitacoraMovimientos> Mostrar()
         {
             try
             {
-                var Objbd = new List<dynamic>(
+                var Objbd =
                     db.Bitacora_Movimientos
                         .Select(Item => new
+                        EReporteBitacoraMovimientos
                         {
                             Usuario = Item.Usuarios.Usuario,
                             fecha_hora_movimiento = Item.fecha_hora_movimiento,
@@ -61,8 +62,7 @@ namespace DosCuerdas.Modelo
                             modulo = Item.modulo,
                             codigo_movimiento_usuario = Item.codigo_movimiento_usuario
                         })
-                        .ToList()
-                );
+                        .ToList();
 
                 return Objbd;
             }

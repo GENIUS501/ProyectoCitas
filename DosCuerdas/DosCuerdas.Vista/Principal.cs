@@ -228,7 +228,7 @@ namespace DosCuerdas.Vista
             try
             {
                 BitacoraSesiones frm = new BitacoraSesiones();
-                frm.Usuario = UsuarioLogueado.Usuario;
+                frm.Usuariologueado = UsuarioLogueado.Usuario;
                 frm.MdiParent = this;
                 frm.Show();
             }

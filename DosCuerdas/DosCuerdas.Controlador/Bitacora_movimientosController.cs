@@ -10,7 +10,7 @@ namespace DosCuerdas.Controlador
 {
     public class Bitacora_movimientosController
     {
-        public List<dynamic> Mostrar()
+        public List<EReporteBitacoraMovimientos> Mostrar()
         {
             try
             {

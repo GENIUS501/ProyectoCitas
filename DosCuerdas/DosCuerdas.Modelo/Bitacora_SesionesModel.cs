@@ -94,17 +94,16 @@ namespace DosCuerdas.Modelo
                 throw ex;
             }
         }
-        public List<dynamic> Mostrara()
+        public List<EReporteBitacoraIngresos> Mostrara()
         {
             try
             {
-                var Obj = new List<dynamic>(db.Bitacora_Sesiones.Select(x => new
-                {
+                var Obj = db.Bitacora_Sesiones.Select(x => new EReporteBitacoraIngresos{
                     Usuario = x.Usuarios.Usuario,
                     fecha_hora_ingreso = x.fecha_hora_ingreso,
                     fecha_hora_salida = x.fecha_hora_salida,
                     codigo_ingreso_salida = x.codigo_ingreso_salida
-                }).ToList());
+                }).ToList();
                 return Obj;
             }
             catch (Exception ex)
@@ -112,6 +111,8 @@ namespace DosCuerdas.Modelo
                 throw ex;
             }
         }
+
+
 
         #endregion
     }
