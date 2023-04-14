@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaClientes));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dat_principal = new System.Windows.Forms.DataGridView();
@@ -42,9 +43,11 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar_id_cliente = new System.Windows.Forms.MaskedTextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -184,6 +187,10 @@
             this.txt_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_nombre.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ListaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,5 +230,6 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.MaskedTextBox txt_buscar_id_cliente;
         private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

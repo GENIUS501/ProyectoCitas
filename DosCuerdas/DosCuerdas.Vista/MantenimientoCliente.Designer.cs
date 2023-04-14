@@ -45,13 +45,13 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.lblid = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtTelefono1 = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,7 @@
             this.btnCancelar.TabIndex = 31;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -215,6 +216,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(285, 51);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar.TabIndex = 48;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
             // lblid
             // 
             this.lblid.AutoSize = true;
@@ -261,17 +273,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
-            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_buscar.Location = new System.Drawing.Point(285, 51);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
-            this.btn_buscar.TabIndex = 48;
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // MantenimientoCliente
             // 

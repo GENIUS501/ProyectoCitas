@@ -23,18 +23,18 @@ namespace DosCuerdas.Controlador
                 throw ex;
             }
         }
-        //public int AgregarPermisos(List<EPermisos> obj, int Idrol)
-        //{
-        //    try
-        //    {
-        //        DPermisos db = new DPermisos();
-        //        return db.Agregar(obj, Idrol);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public int AgregarPermisos(List<EPermisos> obj, int Idrol)
+        {
+            try
+            {
+                DPermisos db = new DPermisos();
+                return db.Agregar(obj, Idrol);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
         #region Modificar
@@ -81,30 +81,30 @@ namespace DosCuerdas.Controlador
             }
         }
 
-        //public List<EPermisos> llenar_Permisos(int ID)
-        //{
-        //    try
-        //    {
-        //        DPermisos db = new DPermisos();
-        //        return db.Mostrar(ID);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-        //public List<EPermisos> llenar_Permisos(int ID, string Modulo)
-        //{
-        //    try
-        //    {
-        //        DPermisos db = new DPermisos();
-        //        return db.Mostrar(ID, Modulo);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public List<EPermisos> llenar_Permisos(int ID)
+        {
+            try
+            {
+                DPermisos db = new DPermisos();
+                return db.Mostrar(ID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<EPermisos> llenar_Permisos(int ID, string Modulo)
+        {
+            try
+            {
+                DPermisos db = new DPermisos();
+                return db.Mostrar(ID, Modulo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

@@ -82,6 +82,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DosCuerdas.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DPermisos.cs" />
     <Compile Include="Entidades\EBitacora_movimientos.cs" />
     <Compile Include="Entidades\EBitacora_Sesiones.cs" />
     <Compile Include="Entidades\EClientes.cs" />

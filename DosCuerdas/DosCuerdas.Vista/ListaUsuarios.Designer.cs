@@ -29,6 +29,7 @@ namespace DosCuerdas.Vista
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaUsuarios));
             this.dat_principal = new System.Windows.Forms.DataGridView();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -43,9 +44,11 @@ namespace DosCuerdas.Vista
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_consultar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dat_principal
@@ -185,6 +188,10 @@ namespace DosCuerdas.Vista
             this.pictureBox1.TabIndex = 87;
             this.pictureBox1.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ListaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +211,7 @@ namespace DosCuerdas.Vista
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +231,6 @@ namespace DosCuerdas.Vista
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_consultar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

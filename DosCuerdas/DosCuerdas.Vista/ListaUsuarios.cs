@@ -171,12 +171,45 @@ namespace DosCuerdas.Vista
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                errorProvider1.SetError(txt_buscar_id_usuario, "");
+                if (this.txt_buscar_id_usuario.Text != "")
+                {
+                    UsuariosController Negocios = new UsuariosController();
+                    var Id = int.Parse(this.txt_buscar_id_usuario.Text);
+                    dat_principal.DataSource = Negocios.Mostrar().Where(x => x.Id_Usuario == Id).ToList();
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_buscar_id_usuario, "Debe llenar este campo!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_buscar_nombre_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                errorProvider1.SetError(txt_nombre, "");
+                if (this.txt_nombre.Text != "")
+                {
+                    UsuariosController Negocios = new UsuariosController();
+                    dat_principal.DataSource = Negocios.Mostrar().Where(x => x.Nombre.Contains(this.txt_nombre.Text)).ToList();
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_nombre, "Debe llenar este campo!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dat_principal_CellClick(object sender, DataGridViewCellEventArgs e)
