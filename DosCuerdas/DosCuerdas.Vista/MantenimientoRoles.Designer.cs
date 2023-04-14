@@ -329,6 +329,7 @@ namespace DosCuerdas.Vista
             this.chb_profesores.TabIndex = 6;
             this.chb_profesores.Text = "Profesores";
             this.chb_profesores.UseVisualStyleBackColor = true;
+            this.chb_profesores.CheckedChanged += new System.EventHandler(this.chb_profesores_CheckedChanged);
             // 
             // chb_estudiantes
             // 
@@ -339,6 +340,7 @@ namespace DosCuerdas.Vista
             this.chb_estudiantes.TabIndex = 6;
             this.chb_estudiantes.Text = "Estudiantes";
             this.chb_estudiantes.UseVisualStyleBackColor = true;
+            this.chb_estudiantes.CheckedChanged += new System.EventHandler(this.chb_estudiantes_CheckedChanged);
             // 
             // chb_clientes
             // 
@@ -349,6 +351,7 @@ namespace DosCuerdas.Vista
             this.chb_clientes.TabIndex = 4;
             this.chb_clientes.Text = "Clientes";
             this.chb_clientes.UseVisualStyleBackColor = true;
+            this.chb_clientes.CheckedChanged += new System.EventHandler(this.chb_clientes_CheckedChanged);
             // 
             // chb_usuarios
             // 
@@ -359,6 +362,7 @@ namespace DosCuerdas.Vista
             this.chb_usuarios.TabIndex = 3;
             this.chb_usuarios.Text = "Usuarios";
             this.chb_usuarios.UseVisualStyleBackColor = true;
+            this.chb_usuarios.CheckedChanged += new System.EventHandler(this.chb_usuarios_CheckedChanged);
             // 
             // chb_rol
             // 
@@ -369,6 +373,7 @@ namespace DosCuerdas.Vista
             this.chb_rol.TabIndex = 2;
             this.chb_rol.Text = "Roles";
             this.chb_rol.UseVisualStyleBackColor = true;
+            this.chb_rol.CheckedChanged += new System.EventHandler(this.chb_rol_CheckedChanged);
             // 
             // grp_profesores
             // 

@@ -4,17 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cc286bf8e937401b8ee10ef3f88e222a" Name="Diagram1">
+      <Diagram DiagramId="0565da450f374cf1a476810e16f83d8b" Name="Diagram1">
         <EntityTypeShape EntityType="DosCuerdasModel.Bitacora_Movimientos" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DosCuerdasModel.Bitacora_Sesiones" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DosCuerdasModel.Cita" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DosCuerdasModel.Clientes" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DosCuerdasModel.Estudiantes" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Estudiantes" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DosCuerdasModel.Permisos" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DosCuerdasModel.Personas" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DosCuerdasModel.Profesores" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Profesores" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DosCuerdasModel.Roles" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DosCuerdasModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DosCuerdasModel.Usuarios" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="DosCuerdasModel.Fk_MOVIMIENTOS_USUARIOS" ManuallyRouted="false" />
         <AssociationConnector Association="DosCuerdasModel.Fk_SESIONES_USUARIOS" ManuallyRouted="false" />

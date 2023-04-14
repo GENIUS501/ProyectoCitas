@@ -60,18 +60,6 @@ namespace DosCuerdas.Vista
                 throw ex;
             }
         }
-        private void llenar()
-        {
-            RolesController Controller = new RolesController();
-            ERoles Obj = new ERoles();
-            Obj = Controller.Mostrar().Where(x => x.Id_Rol == Id).FirstOrDefault();
-            if (Obj != null)
-            {
-                this.txt_id_perfil.Text = Obj.Id_Rol.ToString();
-                this.txt_nombre_perfil.Text = Obj.NombreRol;
-                this.txtdescripcion.Text = Obj.Descripcion;
-            }
-        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try
@@ -85,60 +73,39 @@ namespace DosCuerdas.Vista
                 {
                     if (Accion == "A" || Accion == "M")
                     {
-                        ERoles obj = new ERoles();
-                        obj.NombreRol = this.txt_nombre_perfil.Text;
-                        obj.Descripcion = this.txtdescripcion.Text;
                         RolesController Negocios = new RolesController();
+                        ERoles Rol = new ERoles();
                         Int32 FilasAfectadas = 0;
-                        #region Agregar
+                        Rol.NombreRol = this.txt_nombre_perfil.Text;
+                        Rol.Descripcion = this.txtdescripcion.Text;
                         if (Accion == "A")
                         {
-                            FilasAfectadas = Negocios.Agregar(obj, Usuario);
-
+                            FilasAfectadas = Negocios.Agregar(Rol, Usuario);
                             if (FilasAfectadas > 0)
                             {
-                                MessageBox.Show("Se agrego el rol", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                var Permi = Permisos(FilasAfectadas);
+                                Negocios.AgregarPermisos(Permi, FilasAfectadas);
+                                MessageBox.Show("Rol agregado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
                             {
-                                if (FilasAfectadas == -1)
-                                {
-                                    MessageBox.Show("El rol se ha agregado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    this.Close();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No se pudo agregar el rol!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                                MessageBox.Show("Error al agregar el rol!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        #endregion
-
-                        #region Modificar
                         if (Accion == "M")
                         {
-                            obj.Id_Rol = int.Parse(this.txt_id_perfil.Text);
-                            FilasAfectadas = Negocios.Modificar(obj, Usuario);
-                            if (FilasAfectadas > 0)
-                            {
-                                MessageBox.Show("Rol modificado exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                            else
-                            {
-                                if (FilasAfectadas == -1)
-                                {
-                                    MessageBox.Show("El rol se ha modificado exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    this.Close();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("No se pudo modificar el rol!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
+                            Rol.Id_Rol = int.Parse(this.txt_id_perfil.Text);
+                            FilasAfectadas = Negocios.Modificar(Rol, Usuario);
+                            var Permi = Permisos(int.Parse(this.txt_id_perfil.Text));
+                            Negocios.AgregarPermisos(Permi, int.Parse(this.txt_id_perfil.Text));
+                            MessageBox.Show("Rol modificado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
                         }
-                        #endregion
+                    }
+                    if (Accion == "C")
+                    {
+                        this.Close();
                     }
                 }
             }
@@ -157,13 +124,14 @@ namespace DosCuerdas.Vista
             }
             if (Accion == "M" || Accion == "C")
             {
-                this.Text = "Modificar Loteria";
+                this.Text = "Modificar rol";
                 this.txt_id_perfil.Enabled = false;
-                llenar();
+                Llenar();
                 if (Accion == "C")
                 {
-                    this.Text = "Consultar Loteria";
+                    this.Text = "Consultar rol";
                     this.groupBox1.Enabled = false;
+                    this.groupBox2.Enabled = false;
                 }
             }
         }
@@ -173,6 +141,14 @@ namespace DosCuerdas.Vista
             try
             {
                 RolesController Negocios = new RolesController();
+                ERoles Obj = new ERoles();
+                Obj = Negocios.Mostrar().Where(x => x.Id_Rol == Id).FirstOrDefault();
+                if (Obj != null)
+                {
+                    this.txt_id_perfil.Text = Obj.Id_Rol.ToString();
+                    this.txt_nombre_perfil.Text = Obj.NombreRol;
+                    this.txtdescripcion.Text = Obj.Descripcion;
+                }
                 List<EPermisos> Permisos = new List<EPermisos>();
                 ERoles Rol = new ERoles();
                 Permisos = Negocios.llenar_Permisos(Id);
@@ -790,5 +766,100 @@ namespace DosCuerdas.Vista
             }
         }
         #endregion
+
+        private void chb_usuarios_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.chb_usuarios.Checked == true)
+                {
+                    grp_usuarios.Enabled = true;
+                }
+                else
+                {
+                    grp_usuarios.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void chb_rol_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.chb_rol.Checked == true)
+                {
+                    grp_roles.Enabled = true;
+                }
+                else
+                {
+                    grp_roles.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void chb_clientes_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.chb_clientes.Checked == true)
+                {
+                    grp_clientes.Enabled = true;
+                }
+                else
+                {
+                    grp_clientes.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void chb_estudiantes_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.chb_estudiantes.Checked == true)
+                {
+                    grp_estudiantes.Enabled = true;
+                }
+                else
+                {
+                    grp_estudiantes.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void chb_profesores_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.chb_profesores.Checked == true)
+                {
+                    grp_profesores.Enabled = true;
+                }
+                else
+                {
+                    grp_profesores.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace DosCuerdas.Modelo
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
                     Roles Objbd = new Roles();
-                    Objbd.NombreRol = obj.Descripcion;
+                    Objbd.NombreRol = obj.NombreRol;
                     Objbd.Descripcion = obj.Descripcion;
                     db.Entry(Objbd).State = EntityState.Added;
                     db.Roles.Add(Objbd);

@@ -23,7 +23,6 @@ namespace DosCuerdas.Modelo
         public int Id_Estudiante { get; set; }
         public string Sucursal { get; set; }
         public string TipoClase { get; set; }
-        public string Correo { get; set; }
         public Nullable<System.DateTime> Horario { get; set; }
         public Nullable<int> ID_PERSONA { get; set; }
     

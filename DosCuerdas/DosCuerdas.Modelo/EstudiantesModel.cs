@@ -40,7 +40,6 @@ namespace DosCuerdas.Modelo
                     }
                     Estudiantes Objbd = new Estudiantes();
                     Objbd.ID_PERSONA = IdPersona;
-                    Objbd.Correo = obj.Correo;
                     Objbd.Horario = obj.Horario;
                     Objbd.Sucursal = obj.Sucursal;
                     Objbd.TipoClase = obj.TipoClase;
@@ -81,7 +80,6 @@ namespace DosCuerdas.Modelo
                 {
                     var Objbd = db.Estudiantes.Where(x => x.Id_Estudiante == obj.Id_Estudiante).FirstOrDefault();
                     Objbd.ID_PERSONA = obj.ID_PERSONA;
-                    Objbd.Correo = obj.Correo;
                     Objbd.Horario = obj.Horario;
                     Objbd.Sucursal = obj.Sucursal;
                     Objbd.TipoClase = obj.TipoClase;
