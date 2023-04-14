@@ -41,6 +41,9 @@ namespace DosCuerdas.Vista
             this.btnAceptar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chbAgendarClases = new System.Windows.Forms.CheckBox();
+            this.chbCancelarClases = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chb_agenda_reporte = new System.Windows.Forms.CheckBox();
             this.chb_profesores_reporte = new System.Windows.Forms.CheckBox();
@@ -77,19 +80,16 @@ namespace DosCuerdas.Vista
             this.chk_rol_eliminar = new System.Windows.Forms.CheckBox();
             this.chk_rol_modificar = new System.Windows.Forms.CheckBox();
             this.chk_rol_agregar = new System.Windows.Forms.CheckBox();
-            this.chbAgendarClases = new System.Windows.Forms.CheckBox();
-            this.chbCancelarClases = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.grp_usuarios.SuspendLayout();
             this.grp_profesores.SuspendLayout();
             this.grp_estudiantes.SuspendLayout();
             this.grp_clientes.SuspendLayout();
             this.grp_roles.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -165,6 +165,7 @@ namespace DosCuerdas.Vista
             this.btnCancelar.TabIndex = 86;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -201,6 +202,37 @@ namespace DosCuerdas.Vista
             this.groupBox2.TabIndex = 87;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de permisos";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chbAgendarClases);
+            this.groupBox3.Controls.Add(this.chbCancelarClases);
+            this.groupBox3.Location = new System.Drawing.Point(228, 203);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(123, 100);
+            this.groupBox3.TabIndex = 43;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Procesos";
+            // 
+            // chbAgendarClases
+            // 
+            this.chbAgendarClases.AutoSize = true;
+            this.chbAgendarClases.Location = new System.Drawing.Point(19, 19);
+            this.chbAgendarClases.Name = "chbAgendarClases";
+            this.chbAgendarClases.Size = new System.Drawing.Size(100, 17);
+            this.chbAgendarClases.TabIndex = 42;
+            this.chbAgendarClases.Text = "Agendar Clases";
+            this.chbAgendarClases.UseVisualStyleBackColor = true;
+            // 
+            // chbCancelarClases
+            // 
+            this.chbCancelarClases.AutoSize = true;
+            this.chbCancelarClases.Location = new System.Drawing.Point(19, 55);
+            this.chbCancelarClases.Name = "chbCancelarClases";
+            this.chbCancelarClases.Size = new System.Drawing.Size(102, 17);
+            this.chbCancelarClases.TabIndex = 41;
+            this.chbCancelarClases.Text = "Cancelar Clases";
+            this.chbCancelarClases.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -591,37 +623,6 @@ namespace DosCuerdas.Vista
             this.chk_rol_agregar.Text = "Agregar";
             this.chk_rol_agregar.UseVisualStyleBackColor = true;
             // 
-            // chbAgendarClases
-            // 
-            this.chbAgendarClases.AutoSize = true;
-            this.chbAgendarClases.Location = new System.Drawing.Point(19, 19);
-            this.chbAgendarClases.Name = "chbAgendarClases";
-            this.chbAgendarClases.Size = new System.Drawing.Size(100, 17);
-            this.chbAgendarClases.TabIndex = 42;
-            this.chbAgendarClases.Text = "Agendar Clases";
-            this.chbAgendarClases.UseVisualStyleBackColor = true;
-            // 
-            // chbCancelarClases
-            // 
-            this.chbCancelarClases.AutoSize = true;
-            this.chbCancelarClases.Location = new System.Drawing.Point(19, 55);
-            this.chbCancelarClases.Name = "chbCancelarClases";
-            this.chbCancelarClases.Size = new System.Drawing.Size(102, 17);
-            this.chbCancelarClases.TabIndex = 41;
-            this.chbCancelarClases.Text = "Cancelar Clases";
-            this.chbCancelarClases.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.chbAgendarClases);
-            this.groupBox3.Controls.Add(this.chbCancelarClases);
-            this.groupBox3.Location = new System.Drawing.Point(228, 203);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(123, 100);
-            this.groupBox3.TabIndex = 43;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Procesos";
-            // 
             // MantenimientoRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,6 +640,8 @@ namespace DosCuerdas.Vista
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.grp_usuarios.ResumeLayout(false);
@@ -651,8 +654,6 @@ namespace DosCuerdas.Vista
             this.grp_clientes.PerformLayout();
             this.grp_roles.ResumeLayout(false);
             this.grp_roles.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
