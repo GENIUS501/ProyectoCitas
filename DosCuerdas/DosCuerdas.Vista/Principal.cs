@@ -196,7 +196,88 @@ namespace DosCuerdas.Vista
 
         private void Principal_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                List<EPermisos> perm = new List<EPermisos>();
+                RolesController Negocios = new RolesController();
+                Agendar.Visible = false;
+                Mantenimientos.Visible = false;
+                Reportes.Visible = false;
+                Bitacoras.Visible = false;
+                MantenimientoClientes.Visible = false;
+                MantenimientoEstudiantes.Visible = false;
+                MantenimientoProfesores.Visible = false;
+                MantenimientoRoles.Visible = false;
+                MantenimientoUsuarios.Visible = false;
+                reporteProfesores.Visible = false;
+                reporteEstudiantes.Visible = false;
+                ReporteAgenda.Visible = false;
+                bitacoraIngresos.Visible = false;
+                bitacoraMovimientos.Visible = false;
+                perm = Negocios.llenar_Permisos(UsuarioLogueado.Id_Rol??0);
+                if (perm.Where(x => x.Modulo == "Usuarios").FirstOrDefault() != null)
+                {
+                    Mantenimientos.Visible = true;
+                    MantenimientoUsuarios.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Roles").FirstOrDefault() != null)
+                {
+                    Mantenimientos.Visible = true;
+                    MantenimientoRoles.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Clientes").FirstOrDefault() != null)
+                {
+                    Mantenimientos.Visible = true;
+                    MantenimientoClientes.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Estudiantes").FirstOrDefault() != null)
+                {
+                    Mantenimientos.Visible = true;
+                    MantenimientoEstudiantes.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Profesores").FirstOrDefault() != null)
+                {
+                    Mantenimientos.Visible = true;
+                    MantenimientoProfesores.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "ReporteEstudiantes").FirstOrDefault() != null)
+                {
+                    Reportes.Visible = true;
+                    reporteEstudiantes.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "ReporteAgenda").FirstOrDefault() != null)
+                {
+                    Reportes.Visible = true;
+                    ReporteAgenda.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "ReporteProfesores").FirstOrDefault() != null)
+                {
+                    Reportes.Visible = true;
+                    reporteProfesores.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "BitacoraSesiones").FirstOrDefault() != null)
+                {
+                    Bitacoras.Visible = true;
+                    bitacoraIngresos.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "BitacoraMovimientos").FirstOrDefault() != null)
+                {
+                    Bitacoras.Visible = true;
+                    bitacoraMovimientos.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Agendar").FirstOrDefault() != null)
+                {
+                    Agendar.Visible = true;
+                }
+                if (perm.Where(x => x.Modulo == "Cancelar").FirstOrDefault() != null)
+                {
+                   // bitacoraMovimientos.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)

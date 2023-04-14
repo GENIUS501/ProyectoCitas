@@ -35,21 +35,20 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoDeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenimientoDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeEstudiantreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bitacorasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bitcoraDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Agendar = new System.Windows.Forms.ToolStripMenuItem();
+            this.Mantenimientos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoEstudiantes = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoRoles = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoProfesores = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.Reportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteEstudiantes = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteProfesores = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReporteAgenda = new System.Windows.Forms.ToolStripMenuItem();
+            this.Bitacoras = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitacoraIngresos = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitacoraMovimientos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,10 +56,10 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.mantenimieToolStripMenuItem,
-            this.mantenimientosToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.bitacorasToolStripMenuItem});
+            this.Agendar,
+            this.Mantenimientos,
+            this.Reportes,
+            this.Bitacoras});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(562, 24);
@@ -112,119 +111,112 @@
             this.salirToolStripMenuItem2.Text = "Salir";
             this.salirToolStripMenuItem2.Click += new System.EventHandler(this.salirToolStripMenuItem2_Click);
             // 
-            // mantenimieToolStripMenuItem
+            // Agendar
             // 
-            this.mantenimieToolStripMenuItem.Name = "mantenimieToolStripMenuItem";
-            this.mantenimieToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.mantenimieToolStripMenuItem.Text = "Agendar Clases";
-            this.mantenimieToolStripMenuItem.Click += new System.EventHandler(this.mantenimieToolStripMenuItem_Click);
+            this.Agendar.Name = "Agendar";
+            this.Agendar.Size = new System.Drawing.Size(100, 20);
+            this.Agendar.Text = "Agendar Clases";
+            this.Agendar.Click += new System.EventHandler(this.mantenimieToolStripMenuItem_Click);
             // 
-            // mantenimientosToolStripMenuItem
+            // Mantenimientos
             // 
-            this.mantenimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenimientoToolStripMenuItem,
-            this.mantenimientoDeClienteToolStripMenuItem,
-            this.mantenimientoDeToolStripMenuItem,
-            this.mantenimientoDeToolStripMenuItem1,
-            this.mantenimientoDeUsuariosToolStripMenuItem});
-            this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
-            this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
+            this.Mantenimientos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MantenimientoEstudiantes,
+            this.MantenimientoClientes,
+            this.MantenimientoRoles,
+            this.MantenimientoProfesores,
+            this.MantenimientoUsuarios});
+            this.Mantenimientos.Name = "Mantenimientos";
+            this.Mantenimientos.Size = new System.Drawing.Size(106, 20);
+            this.Mantenimientos.Text = "Mantenimientos";
             // 
-            // mantenimientoToolStripMenuItem
+            // MantenimientoEstudiantes
             // 
-            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento de Estudientes";
-            this.mantenimientoToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem_Click);
+            this.MantenimientoEstudiantes.Name = "MantenimientoEstudiantes";
+            this.MantenimientoEstudiantes.Size = new System.Drawing.Size(235, 22);
+            this.MantenimientoEstudiantes.Text = "Mantenimiento de Estudientes";
+            this.MantenimientoEstudiantes.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem_Click);
             // 
-            // mantenimientoDeClienteToolStripMenuItem
+            // MantenimientoClientes
             // 
-            this.mantenimientoDeClienteToolStripMenuItem.Name = "mantenimientoDeClienteToolStripMenuItem";
-            this.mantenimientoDeClienteToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.mantenimientoDeClienteToolStripMenuItem.Text = "Mantenimiento de Clientes";
-            this.mantenimientoDeClienteToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoDeClienteToolStripMenuItem_Click);
+            this.MantenimientoClientes.Name = "MantenimientoClientes";
+            this.MantenimientoClientes.Size = new System.Drawing.Size(235, 22);
+            this.MantenimientoClientes.Text = "Mantenimiento de Clientes";
+            this.MantenimientoClientes.Click += new System.EventHandler(this.mantenimientoDeClienteToolStripMenuItem_Click);
             // 
-            // mantenimientoDeToolStripMenuItem
+            // MantenimientoRoles
             // 
-            this.mantenimientoDeToolStripMenuItem.Name = "mantenimientoDeToolStripMenuItem";
-            this.mantenimientoDeToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.mantenimientoDeToolStripMenuItem.Text = "Mantenimiento de Roles";
-            this.mantenimientoDeToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoDeToolStripMenuItem_Click);
+            this.MantenimientoRoles.Name = "MantenimientoRoles";
+            this.MantenimientoRoles.Size = new System.Drawing.Size(235, 22);
+            this.MantenimientoRoles.Text = "Mantenimiento de Roles";
+            this.MantenimientoRoles.Click += new System.EventHandler(this.mantenimientoDeToolStripMenuItem_Click);
             // 
-            // mantenimientoDeToolStripMenuItem1
+            // MantenimientoProfesores
             // 
-            this.mantenimientoDeToolStripMenuItem1.Name = "mantenimientoDeToolStripMenuItem1";
-            this.mantenimientoDeToolStripMenuItem1.Size = new System.Drawing.Size(235, 22);
-            this.mantenimientoDeToolStripMenuItem1.Text = "Mantenimiento de Profesores";
-            this.mantenimientoDeToolStripMenuItem1.Click += new System.EventHandler(this.mantenimientoDeToolStripMenuItem1_Click);
+            this.MantenimientoProfesores.Name = "MantenimientoProfesores";
+            this.MantenimientoProfesores.Size = new System.Drawing.Size(235, 22);
+            this.MantenimientoProfesores.Text = "Mantenimiento de Profesores";
+            this.MantenimientoProfesores.Click += new System.EventHandler(this.mantenimientoDeToolStripMenuItem1_Click);
             // 
-            // mantenimientoDeUsuariosToolStripMenuItem
+            // MantenimientoUsuarios
             // 
-            this.mantenimientoDeUsuariosToolStripMenuItem.Name = "mantenimientoDeUsuariosToolStripMenuItem";
-            this.mantenimientoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.mantenimientoDeUsuariosToolStripMenuItem.Text = "Mantenimiento de Usuarios";
-            this.mantenimientoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoDeUsuariosToolStripMenuItem_Click);
+            this.MantenimientoUsuarios.Name = "MantenimientoUsuarios";
+            this.MantenimientoUsuarios.Size = new System.Drawing.Size(235, 22);
+            this.MantenimientoUsuarios.Text = "Mantenimiento de Usuarios";
+            this.MantenimientoUsuarios.Click += new System.EventHandler(this.mantenimientoDeUsuariosToolStripMenuItem_Click);
             // 
-            // reportesToolStripMenuItem
+            // Reportes
             // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteDeEstudiantreToolStripMenuItem,
-            this.reporteDeClientesToolStripMenuItem,
-            this.reporteDeToolStripMenuItem,
-            this.reporteDeUsuariosToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.Reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteEstudiantes,
+            this.reporteProfesores,
+            this.ReporteAgenda});
+            this.Reportes.Name = "Reportes";
+            this.Reportes.Size = new System.Drawing.Size(65, 20);
+            this.Reportes.Text = "Reportes";
             // 
-            // reporteDeEstudiantreToolStripMenuItem
+            // reporteEstudiantes
             // 
-            this.reporteDeEstudiantreToolStripMenuItem.Name = "reporteDeEstudiantreToolStripMenuItem";
-            this.reporteDeEstudiantreToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.reporteDeEstudiantreToolStripMenuItem.Text = "Reporte de Estudiantre";
-            this.reporteDeEstudiantreToolStripMenuItem.Click += new System.EventHandler(this.reporteDeEstudiantreToolStripMenuItem_Click);
+            this.reporteEstudiantes.Name = "reporteEstudiantes";
+            this.reporteEstudiantes.Size = new System.Drawing.Size(225, 22);
+            this.reporteEstudiantes.Text = "Reporte de Estudiantes";
+            this.reporteEstudiantes.Click += new System.EventHandler(this.reporteDeEstudiantreToolStripMenuItem_Click);
             // 
-            // reporteDeClientesToolStripMenuItem
+            // reporteProfesores
             // 
-            this.reporteDeClientesToolStripMenuItem.Name = "reporteDeClientesToolStripMenuItem";
-            this.reporteDeClientesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.reporteDeClientesToolStripMenuItem.Text = "Reporte de Clientes";
+            this.reporteProfesores.Name = "reporteProfesores";
+            this.reporteProfesores.Size = new System.Drawing.Size(225, 22);
+            this.reporteProfesores.Text = "Reporte de Profesores";
+            this.reporteProfesores.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
             // 
-            // reporteDeToolStripMenuItem
+            // ReporteAgenda
             // 
-            this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
-            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.reporteDeToolStripMenuItem.Text = "Reporte de Profesores";
-            this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
+            this.ReporteAgenda.Name = "ReporteAgenda";
+            this.ReporteAgenda.Size = new System.Drawing.Size(225, 22);
+            this.ReporteAgenda.Text = "Reporte de clases agendadas";
             // 
-            // reporteDeUsuariosToolStripMenuItem
+            // Bitacoras
             // 
-            this.reporteDeUsuariosToolStripMenuItem.Name = "reporteDeUsuariosToolStripMenuItem";
-            this.reporteDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.reporteDeUsuariosToolStripMenuItem.Text = "Reporte de Usuarios ";
+            this.Bitacoras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bitacoraIngresos,
+            this.bitacoraMovimientos});
+            this.Bitacoras.Name = "Bitacoras";
+            this.Bitacoras.Size = new System.Drawing.Size(67, 20);
+            this.Bitacoras.Text = "Bitacoras";
             // 
-            // bitacorasToolStripMenuItem
+            // bitacoraIngresos
             // 
-            this.bitacorasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bitcoraDeToolStripMenuItem,
-            this.bitacoraToolStripMenuItem});
-            this.bitacorasToolStripMenuItem.Name = "bitacorasToolStripMenuItem";
-            this.bitacorasToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.bitacorasToolStripMenuItem.Text = "Bitacoras";
+            this.bitacoraIngresos.Name = "bitacoraIngresos";
+            this.bitacoraIngresos.Size = new System.Drawing.Size(201, 22);
+            this.bitacoraIngresos.Text = "Bitcora de Ingreso";
+            this.bitacoraIngresos.Click += new System.EventHandler(this.bitcoraDeToolStripMenuItem_Click);
             // 
-            // bitcoraDeToolStripMenuItem
+            // bitacoraMovimientos
             // 
-            this.bitcoraDeToolStripMenuItem.Name = "bitcoraDeToolStripMenuItem";
-            this.bitcoraDeToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.bitcoraDeToolStripMenuItem.Text = "Bitcora de Ingreso";
-            this.bitcoraDeToolStripMenuItem.Click += new System.EventHandler(this.bitcoraDeToolStripMenuItem_Click);
-            // 
-            // bitacoraToolStripMenuItem
-            // 
-            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
-            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.bitacoraToolStripMenuItem.Text = "Bitacora de Movimiento";
-            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
+            this.bitacoraMovimientos.Name = "bitacoraMovimientos";
+            this.bitacoraMovimientos.Size = new System.Drawing.Size(201, 22);
+            this.bitacoraMovimientos.Text = "Bitacora de Movimiento";
+            this.bitacoraMovimientos.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -257,21 +249,20 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem mantenimieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoDeClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoDeToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem mantenimientoDeUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeEstudiantreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bitacorasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bitcoraDeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Agendar;
+        private System.Windows.Forms.ToolStripMenuItem Mantenimientos;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoEstudiantes;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoClientes;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoRoles;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoProfesores;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem Reportes;
+        private System.Windows.Forms.ToolStripMenuItem reporteEstudiantes;
+        private System.Windows.Forms.ToolStripMenuItem reporteProfesores;
+        private System.Windows.Forms.ToolStripMenuItem ReporteAgenda;
+        private System.Windows.Forms.ToolStripMenuItem Bitacoras;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraIngresos;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraMovimientos;
     }
 }
 
