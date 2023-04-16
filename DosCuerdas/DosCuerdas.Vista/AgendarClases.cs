@@ -1,4 +1,5 @@
 ﻿using DosCuerdas.Controlador;
+using DosCuerdas.Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,8 +36,9 @@ namespace DosCuerdas.Vista
                 if (this.txtCedulaProfesor.Text != "")
                 {
                     ProfesoresController Controlador = new ProfesoresController();
-                    dat_profesores.DataSource = Controlador.Mostrar().Select(Item => new {
-                        Id_de_profesor=Item.Id_Profesor,
+                    dat_profesores.DataSource = Controlador.Mostrar().Select(Item => new
+                    {
+                        Id_de_profesor = Item.Id_Profesor,
                         Cedula = Item.Cedula,
                         Nombre = Item.Nombre,
                         PrimerApellido = Item.PrimerApellido,
@@ -58,8 +60,9 @@ namespace DosCuerdas.Vista
                 if (this.txtCedulaEstudiante.Text != "")
                 {
                     EstudiantesController Controlador = new EstudiantesController();
-                    datEstudiantes.DataSource = Controlador.Mostrar().Select(Item=> new {
-                        Id_de_estudiante=Item.Id_Estudiante,
+                    datEstudiantes.DataSource = Controlador.Mostrar().Select(Item => new
+                    {
+                        Id_de_estudiante = Item.Id_Estudiante,
                         Cedula = Item.Cedula,
                         Nombre = Item.Nombre,
                         PrimerApellido = Item.PrimerApellido,
@@ -105,7 +108,7 @@ namespace DosCuerdas.Vista
                 else
                 {
                     Estudiante = int.Parse(this.datEstudiantes.Rows[e.RowIndex].Cells[0].Value.ToString());
-                    var mostrar = this.datEstudiantes.Rows[e.RowIndex].Cells[2].Value.ToString()+" "+this.datEstudiantes.Rows[e.RowIndex].Cells[3].Value.ToString()+" "+ this.datEstudiantes.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    var mostrar = this.datEstudiantes.Rows[e.RowIndex].Cells[2].Value.ToString() + " " + this.datEstudiantes.Rows[e.RowIndex].Cells[3].Value.ToString() + " " + this.datEstudiantes.Rows[e.RowIndex].Cells[4].Value.ToString();
                     this.txtEstudiante.Text = mostrar;
                 }
             }
@@ -114,15 +117,97 @@ namespace DosCuerdas.Vista
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private bool validar()
+        {
+            bool ok = false;
+            try
+            {
+                if (Profesor == -1)
+                {
+                    errorProvider1.SetError(this.dat_profesores, "Debe seleccionar un profesor");
+                    ok = true;
+                }
+                if (Estudiante == -1)
+                {
+                    errorProvider1.SetError(this.datEstudiantes, "Debe seleccionar un estudiante");
+                    ok = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ok;
+        }
+        private void borrar_error()
+        {
+            try
+            {
+                errorProvider1.SetError(this.datEstudiantes, "");
+                errorProvider1.SetError(this.dat_profesores, "");
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                borrar_error();
+                if (!validar())
+                {
+                    ECita obj = new ECita();
 
+                    obj.Id_Estudiante = Estudiante;
+                    obj.Id_Profesor = Profesor;
+                    obj.Id_Usuario = Usuario;
+                    obj.FECHACITA = Convert.ToDateTime(this.txtFecha.Text);
+                    obj.HORA_CITA = this.cbo_hora.SelectedItem.ToString();
+                    obj.DURACION = 1;
+                    obj.ESTADO = "Pendiente";
+                    obj.Observaciones = this.txtObservaciones.Text;
+                    CitaController Negocios = new CitaController();
+                    Int32 FilasAfectadas = 0;
+                    FilasAfectadas = Negocios.Agregar(obj, Usuario);
+
+                    if (FilasAfectadas > 0)
+                    {
+                        MessageBox.Show("Se agendo la clase", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (FilasAfectadas == -1)
+                        {
+                            MessageBox.Show("La clase se agendo exitosamente pero no se a podido registrar la transaccion!!!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo agendar la clase!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

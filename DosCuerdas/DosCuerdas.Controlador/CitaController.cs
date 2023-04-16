@@ -41,12 +41,12 @@ namespace DosCuerdas.Controlador
         #endregion
 
         #region Mostrar
-        public List<EReporteCita> Mostrar()
+        public List<EReporteCita> Mostrar(bool? Canceladas)
         {
             try
             {
                 CitaModel db = new CitaModel();
-                return db.Mostrar();
+                return db.Mostrar(Canceladas);
             }
             catch (Exception ex)
             {
