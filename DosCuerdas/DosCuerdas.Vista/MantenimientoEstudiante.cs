@@ -69,6 +69,7 @@ namespace DosCuerdas.Vista
                 {
                     this.Text = "Modificar Estudiante";
                     this.txtId.Enabled = false;
+                    this.btn_buscar.Enabled = false;
                     llenar();
                     this.txtApellido1.Enabled = true;
                     this.txtApellido2.Enabled = true;

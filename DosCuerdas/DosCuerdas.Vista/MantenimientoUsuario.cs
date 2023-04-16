@@ -64,6 +64,7 @@ namespace DosCuerdas.Vista
                 this.Text = "Modificar usuario";
                 this.txtId.Enabled = false;
                 llenar();
+                this.btn_buscar.Enabled = false;
                 this.txtApellido1.Enabled = true;
                 this.txtApellido2.Enabled = true;
                 this.txtClave.Enabled = true;

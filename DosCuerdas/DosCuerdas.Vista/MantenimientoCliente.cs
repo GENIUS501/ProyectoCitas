@@ -40,6 +40,7 @@ namespace DosCuerdas.Vista
                     this.Text = "Modificar Cliente";
                     this.txtId.Enabled = false;
                     llenar();
+                    this.btn_buscar.Enabled = false;
                     this.txtApellido1.Enabled = true;
                     this.txtApellido2.Enabled = true;
                     this.txtCorreo.Enabled = true;

@@ -47,6 +47,7 @@ namespace DosCuerdas.Vista
                     this.txtNombre.Enabled = true;
                     this.txtTelefono1.Enabled = true;
                     this.txtTelefono2.Enabled = true;
+                    this.btn_buscar.Enabled = false;
                     if (Accion == "C")
                     {
                         this.Text = "Consultar Profesor";
