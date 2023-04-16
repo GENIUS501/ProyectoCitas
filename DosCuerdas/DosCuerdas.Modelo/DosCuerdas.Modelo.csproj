@@ -62,6 +62,7 @@
     <Compile Include="Cita.cs">
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
+    <Compile Include="CitaModel.cs" />
     <Compile Include="Clientes.cs">
       <DependentUpon>DosCuerdas.tt</DependentUpon>
     </Compile>
@@ -85,6 +86,7 @@
     <Compile Include="DPermisos.cs" />
     <Compile Include="Entidades\EBitacora_movimientos.cs" />
     <Compile Include="Entidades\EBitacora_Sesiones.cs" />
+    <Compile Include="Entidades\ECita.cs" />
     <Compile Include="Entidades\EClientes.cs" />
     <Compile Include="Entidades\EEstudiantes.cs" />
     <Compile Include="Entidades\EPermisos.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Entidades\EProfesores.cs" />
     <Compile Include="Entidades\EReporteBitacoraIngresos.cs" />
     <Compile Include="Entidades\EReporteBitacoraMovimientos.cs" />
+    <Compile Include="Entidades\EReporteCita.cs" />
     <Compile Include="Entidades\ERoles.cs" />
     <Compile Include="Entidades\EUsuarios.cs" />
     <Compile Include="Estudiantes.cs">
