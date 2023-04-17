@@ -229,9 +229,9 @@ namespace DosCuerdas.Vista
             this.chbCancelarClases.AutoSize = true;
             this.chbCancelarClases.Location = new System.Drawing.Point(19, 55);
             this.chbCancelarClases.Name = "chbCancelarClases";
-            this.chbCancelarClases.Size = new System.Drawing.Size(102, 17);
+            this.chbCancelarClases.Size = new System.Drawing.Size(103, 17);
             this.chbCancelarClases.TabIndex = 41;
-            this.chbCancelarClases.Text = "Cancelar Clases";
+            this.chbCancelarClases.Text = "Modificar Clases";
             this.chbCancelarClases.UseVisualStyleBackColor = true;
             // 
             // groupBox5

@@ -21,7 +21,8 @@ namespace DosCuerdas.Modelo
             {
                 using (TransactionScope Ts = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    var Existente = db.Cita.Where(x => x.Id_Profesor == obj.Id_Profesor && x.Id_Estudiante == obj.Id_Estudiante && x.HORA_CITA == obj.HORA_CITA && x.FECHACITA.Date == obj.FECHACITA.Date || x.Id_Estudiante == obj.Id_Estudiante && x.HORA_CITA == obj.HORA_CITA && x.FECHACITA.Date == obj.FECHACITA.Date).FirstOrDefault();
+                    var FechaCita = obj.FECHACITA.Date;
+                    var Existente = db.Cita.Where(x => x.Id_Profesor == obj.Id_Profesor && x.Id_Estudiante == obj.Id_Estudiante && x.HORA_CITA == obj.HORA_CITA && x.FECHACITA == FechaCita || x.Id_Estudiante == obj.Id_Estudiante && x.HORA_CITA == obj.HORA_CITA && x.FECHACITA == FechaCita).FirstOrDefault();
                     if (Existente != null)
                     {
                         Ts.Dispose();
@@ -31,7 +32,7 @@ namespace DosCuerdas.Modelo
                     Objbd.Id_Usuario = obj.Id_Usuario;
                     Objbd.Id_Profesor = obj.Id_Profesor;
                     Objbd.Id_Estudiante = obj.Id_Estudiante;
-                    Objbd.FECHACITA = obj.FECHACITA;
+                    Objbd.FECHACITA = obj.FECHACITA.Date;
                     Objbd.DURACION = obj.DURACION;
                     Objbd.HORA_CITA = obj.HORA_CITA;
                     Objbd.ESTADO = "Pendiente";
@@ -76,6 +77,12 @@ namespace DosCuerdas.Modelo
                     //    Ts.Dispose();
                     //    throw new Exception("El Estudiante ya inscribio una clase en este horario o el profesor no esta disponible en ese horario.");
                     //}
+                    var Atendida = db.Cita.Where(x => x.IDCITA == obj.IDCITA && x.ESTADO == obj.ESTADO).FirstOrDefault();
+                    if (Atendida != null)
+                    {
+                        Ts.Dispose();
+                        throw new Exception("La clase ya fue atendida.");
+                    }
                     var Objbd = db.Cita.Where(x => x.IDCITA == obj.IDCITA).FirstOrDefault();
                     Objbd.ESTADO = obj.ESTADO;
                     db.Entry(Objbd).State = EntityState.Modified;
@@ -107,7 +114,7 @@ namespace DosCuerdas.Modelo
             try
             {
                 List<Cita> Citas = new List<Cita>();
-                if (Canceladas==true)
+                if (Canceladas == true)
                 {
                     Citas = db.Cita.Where(x => x.ESTADO == "Cancelada").ToList();
                 }
@@ -115,7 +122,7 @@ namespace DosCuerdas.Modelo
                 {
                     Citas = db.Cita.Where(x => x.ESTADO != "Cancelada").ToList();
                 }
-                
+
                 List<EReporteCita> Lista = new List<EReporteCita>();
                 if (Citas.Count() > 0)
                 {
@@ -129,7 +136,8 @@ namespace DosCuerdas.Modelo
                         FECHACITA = Item.FECHACITA,
                         HORA_CITA = Item.HORA_CITA,
                         DURACION = Item.DURACION,
-                        ESTADO = Item.ESTADO
+                        ESTADO = Item.ESTADO,
+                        Observaciones=Item.Observaciones
                     }).ToList();
                 }
                 return Lista;

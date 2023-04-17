@@ -47,6 +47,7 @@
             this.Bitacoras = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraIngresos = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraMovimientos = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cancelar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.Agendar,
+            this.Cancelar,
             this.Mantenimientos,
             this.Reportes,
             this.Bitacoras});
@@ -202,6 +204,13 @@
             this.bitacoraMovimientos.Text = "Bitacora de Movimiento";
             this.bitacoraMovimientos.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
+            // Cancelar
+            // 
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(147, 20);
+            this.Cancelar.Text = "Modificar citas de clases";
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +254,7 @@
         private System.Windows.Forms.ToolStripMenuItem Bitacoras;
         private System.Windows.Forms.ToolStripMenuItem bitacoraIngresos;
         private System.Windows.Forms.ToolStripMenuItem bitacoraMovimientos;
+        private System.Windows.Forms.ToolStripMenuItem Cancelar;
     }
 }
 

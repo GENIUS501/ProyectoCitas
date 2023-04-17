@@ -214,6 +214,7 @@ namespace DosCuerdas.Vista
                 ReporteAgenda.Visible = false;
                 bitacoraIngresos.Visible = false;
                 bitacoraMovimientos.Visible = false;
+                Cancelar.Visible = false;
                 perm = Negocios.llenar_Permisos(UsuarioLogueado.Id_Rol??0);
                 if (perm.Where(x => x.Modulo == "Usuarios").FirstOrDefault() != null)
                 {
@@ -271,7 +272,7 @@ namespace DosCuerdas.Vista
                 }
                 if (perm.Where(x => x.Modulo == "Cancelar").FirstOrDefault() != null)
                 {
-                   // bitacoraMovimientos.Visible = true;
+                    Cancelar.Visible = true;
                 }
             }
             catch (Exception ex)
@@ -325,6 +326,21 @@ namespace DosCuerdas.Vista
             {
                 BitacoraMovimientos frm = new BitacoraMovimientos();
                 frm.Usuario = UsuarioLogueado.Usuario;
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ModificarClases frm = new ModificarClases();
+                frm.Usuario = UsuarioLogueado.Id_Usuario;
                 frm.MdiParent = this;
                 frm.Show();
             }

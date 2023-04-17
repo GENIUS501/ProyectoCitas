@@ -87,8 +87,10 @@ namespace DosCuerdas.Vista
                 else
                 {
                     Profesor = int.Parse(this.dat_profesores.Rows[e.RowIndex].Cells[0].Value.ToString());
-                    var mostrar = this.datEstudiantes.Rows[e.RowIndex].Cells[2].Value.ToString() + " " + this.datEstudiantes.Rows[e.RowIndex].Cells[3].Value.ToString() + " " + this.datEstudiantes.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    this.txtEstudiante.Text = mostrar;
+                    var Nombre = this.dat_profesores.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    var Apellido1 = this.dat_profesores.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    var Apellido2 = this.dat_profesores.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    this.txtProfesor.Text = Nombre + " " + Apellido1 + " " + Apellido2;
                 }
             }
             catch (Exception ex)
@@ -108,8 +110,10 @@ namespace DosCuerdas.Vista
                 else
                 {
                     Estudiante = int.Parse(this.datEstudiantes.Rows[e.RowIndex].Cells[0].Value.ToString());
-                    var mostrar = this.datEstudiantes.Rows[e.RowIndex].Cells[2].Value.ToString() + " " + this.datEstudiantes.Rows[e.RowIndex].Cells[3].Value.ToString() + " " + this.datEstudiantes.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    this.txtEstudiante.Text = mostrar;
+                    var Nombre = this.datEstudiantes.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    var Apellido1 = this.datEstudiantes.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    var Apellido2 = this.datEstudiantes.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    this.txtEstudiante.Text = Nombre + " " + Apellido1 + " " + Apellido2;
                 }
             }
             catch (Exception ex)
@@ -132,6 +136,15 @@ namespace DosCuerdas.Vista
                     errorProvider1.SetError(this.datEstudiantes, "Debe seleccionar un estudiante");
                     ok = true;
                 }
+                if (DateTime.Now.Date < Convert.ToDateTime(this.txtFecha.Text).Date)
+                {
+
+                }
+                else
+                {
+                    errorProvider1.SetError(this.txtFecha, "La fecha no puede ser igual o menor a la de hoy.");
+                    ok = true;
+                }
             }
             catch (Exception ex)
             {
@@ -144,6 +157,7 @@ namespace DosCuerdas.Vista
             try
             {
                 errorProvider1.SetError(this.datEstudiantes, "");
+                errorProvider1.SetError(this.txtFecha,"");
                 errorProvider1.SetError(this.dat_profesores, "");
             }
             catch (Exception ex)
@@ -160,7 +174,6 @@ namespace DosCuerdas.Vista
                 if (!validar())
                 {
                     ECita obj = new ECita();
-
                     obj.Id_Estudiante = Estudiante;
                     obj.Id_Profesor = Profesor;
                     obj.Id_Usuario = Usuario;
@@ -194,7 +207,7 @@ namespace DosCuerdas.Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
