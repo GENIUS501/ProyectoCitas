@@ -43,9 +43,9 @@ namespace DosCuerdas.Vista
 
         private void chb_Canceladas_CheckedChanged(object sender, EventArgs e)
         {
-            if (chb_Canceladas.Checked == true)
+            try
             {
-                try
+                if (chb_Canceladas.Checked == true)
                 {
                     CitaController Controlador = new CitaController();
                     var datasource = Controlador.Mostrar(true);
@@ -58,10 +58,23 @@ namespace DosCuerdas.Vista
                     reportViewer1.LocalReport.SetParameters(parameters);
                     this.reportViewer1.RefreshReport();
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CitaController Controlador = new CitaController();
+                    var datasource = Controlador.Mostrar(null);
+                    ReportDataSource Rds = new ReportDataSource("DataSet1", datasource);
+                    this.reportViewer1.LocalReport.DataSources.Clear();
+                    this.reportViewer1.LocalReport.DataSources.Add(Rds);
+                    ReportParameter[] parameters = new ReportParameter[2];
+                    parameters[0] = new ReportParameter("Usuario", Usuario);
+                    parameters[1] = new ReportParameter("Fecha", DateTime.Now.ToString());
+                    reportViewer1.LocalReport.SetParameters(parameters);
+                    this.reportViewer1.RefreshReport();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
