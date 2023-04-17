@@ -1260,6 +1260,21 @@ FROM            Bitacora_Movimientos INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ReporteAgenda" msprop:Generator_TableClassName="ReporteAgendaDataTable" msprop:Generator_TableVarName="tableReporteAgenda" msprop:Generator_RowChangedName="ReporteAgendaRowChanged" msprop:Generator_TablePropName="ReporteAgenda" msprop:Generator_RowDeletingName="ReporteAgendaRowDeleting" msprop:Generator_RowChangingName="ReporteAgendaRowChanging" msprop:Generator_RowEvHandlerName="ReporteAgendaRowChangeEventHandler" msprop:Generator_RowDeletedName="ReporteAgendaRowDeleted" msprop:Generator_RowClassName="ReporteAgendaRow" msprop:Generator_UserTableName="ReporteAgenda" msprop:Generator_RowEvArgName="ReporteAgendaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Profesor" msprop:Generator_ColumnVarNameInTable="columnProfesor" msprop:Generator_ColumnPropNameInRow="Profesor" msprop:Generator_ColumnPropNameInTable="ProfesorColumn" msprop:Generator_UserColumnName="Profesor" type="xs:string" minOccurs="0" />
+              <xs:element name="Estudiante" msprop:Generator_ColumnVarNameInTable="columnEstudiante" msprop:Generator_ColumnPropNameInRow="Estudiante" msprop:Generator_ColumnPropNameInTable="EstudianteColumn" msprop:Generator_UserColumnName="Estudiante" type="xs:string" minOccurs="0" />
+              <xs:element name="IDCITA" msprop:Generator_ColumnVarNameInTable="columnIDCITA" msprop:Generator_ColumnPropNameInRow="IDCITA" msprop:Generator_ColumnPropNameInTable="IDCITAColumn" msprop:Generator_UserColumnName="IDCITA" type="xs:string" />
+              <xs:element name="HORA_CITA" msprop:Generator_ColumnVarNameInTable="columnHORA_CITA" msprop:Generator_ColumnPropNameInRow="HORA_CITA" msprop:Generator_ColumnPropNameInTable="HORA_CITAColumn" msprop:Generator_UserColumnName="HORA_CITA" type="xs:string" minOccurs="0" />
+              <xs:element name="DURACION" msprop:Generator_ColumnVarNameInTable="columnDURACION" msprop:Generator_ColumnPropNameInRow="DURACION" msprop:Generator_ColumnPropNameInTable="DURACIONColumn" msprop:Generator_UserColumnName="DURACION" type="xs:string" minOccurs="0" />
+              <xs:element name="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_UserColumnName="ESTADO" type="xs:string" minOccurs="0" />
+              <xs:element name="FECHACITA" msprop:Generator_ColumnVarNameInTable="columnFECHACITA" msprop:Generator_ColumnPropNameInRow="FECHACITA" msprop:Generator_ColumnPropNameInTable="FECHACITAColumn" msprop:Generator_UserColumnName="FECHACITA" type="xs:string" minOccurs="0" />
+              <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1319,6 +1334,10 @@ FROM            Bitacora_Movimientos INNER JOIN
     <xs:unique name="BitacoraMovimientos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:BitacoraMovimientos" />
       <xs:field xpath="mstns:codigo_movimiento_usuario" />
+    </xs:unique>
+    <xs:unique name="ReporteAgenda_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReporteAgenda" />
+      <xs:field xpath="mstns:IDCITA" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

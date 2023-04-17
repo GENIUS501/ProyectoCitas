@@ -349,5 +349,20 @@ namespace DosCuerdas.Vista
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ReporteAgenda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ReporteAgenda frm = new ReporteAgenda();
+                frm.Usuario = UsuarioLogueado.Usuario;
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

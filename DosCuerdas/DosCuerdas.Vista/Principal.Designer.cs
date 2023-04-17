@@ -180,6 +180,7 @@
             this.ReporteAgenda.Name = "ReporteAgenda";
             this.ReporteAgenda.Size = new System.Drawing.Size(225, 22);
             this.ReporteAgenda.Text = "Reporte de clases agendadas";
+            this.ReporteAgenda.Click += new System.EventHandler(this.ReporteAgenda_Click);
             // 
             // Bitacoras
             // 

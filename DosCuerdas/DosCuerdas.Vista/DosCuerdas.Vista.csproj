@@ -197,6 +197,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAgenda.Designer.cs">
+      <DependentUpon>ReporteAgenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAgenda.rdlc" />
+    <EmbeddedResource Include="ReporteAgenda.resx">
+      <DependentUpon>ReporteAgenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteEstudiantes.rdlc" />
     <EmbeddedResource Include="ReporteEstudiantes.resx">
       <DependentUpon>ReporteEstudiantes.cs</DependentUpon>
