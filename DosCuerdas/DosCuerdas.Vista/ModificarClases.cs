@@ -98,7 +98,6 @@ namespace DosCuerdas.Vista
                     if (FilasAfectadas > 0)
                     {
                         MessageBox.Show("Se atendio la clase", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
                     }
                     else
                     {
@@ -141,7 +140,6 @@ namespace DosCuerdas.Vista
                     if (FilasAfectadas > 0)
                     {
                         MessageBox.Show("Se cancelo la clase", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
                     }
                     else
                     {
