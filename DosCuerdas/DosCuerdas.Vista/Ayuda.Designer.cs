@@ -79,6 +79,7 @@
             this.Controls.Add(this.btnManualUsuario);
             this.Name = "Ayuda";
             this.Text = "Dos Cuerdas | Ayuda";
+            this.Load += new System.EventHandler(this.Ayuda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

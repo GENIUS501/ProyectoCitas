@@ -37,8 +37,6 @@
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtTelefono2 = new System.Windows.Forms.TextBox();
-            this.txtTelefono1 = new System.Windows.Forms.TextBox();
             this.txtApellido2 = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -59,6 +57,8 @@
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtTelefono1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -128,22 +128,6 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
             this.txtCorreo.TabIndex = 67;
-            // 
-            // txtTelefono2
-            // 
-            this.txtTelefono2.Enabled = false;
-            this.txtTelefono2.Location = new System.Drawing.Point(186, 169);
-            this.txtTelefono2.Name = "txtTelefono2";
-            this.txtTelefono2.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono2.TabIndex = 66;
-            // 
-            // txtTelefono1
-            // 
-            this.txtTelefono1.Enabled = false;
-            this.txtTelefono1.Location = new System.Drawing.Point(22, 169);
-            this.txtTelefono1.Name = "txtTelefono1";
-            this.txtTelefono1.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono1.TabIndex = 65;
             // 
             // txtApellido2
             // 
@@ -273,6 +257,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTelefono1);
+            this.groupBox1.Controls.Add(this.txtTelefono2);
             this.groupBox1.Controls.Add(this.lblid);
             this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.btn_buscar);
@@ -286,8 +272,6 @@
             this.groupBox1.Controls.Add(this.txtApellido2);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.lblTelefono1);
-            this.groupBox1.Controls.Add(this.txtTelefono2);
-            this.groupBox1.Controls.Add(this.txtTelefono1);
             this.groupBox1.Controls.Add(this.lblTelefono2);
             this.groupBox1.Controls.Add(this.lblCorreo);
             this.groupBox1.Location = new System.Drawing.Point(24, 77);
@@ -352,6 +336,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtTelefono1
+            // 
+            this.txtTelefono1.Enabled = false;
+            this.txtTelefono1.Location = new System.Drawing.Point(22, 169);
+            this.txtTelefono1.Mask = "00000000";
+            this.txtTelefono1.Name = "txtTelefono1";
+            this.txtTelefono1.Size = new System.Drawing.Size(115, 20);
+            this.txtTelefono1.TabIndex = 74;
+            // 
+            // txtTelefono2
+            // 
+            this.txtTelefono2.Enabled = false;
+            this.txtTelefono2.Location = new System.Drawing.Point(186, 169);
+            this.txtTelefono2.Mask = "00000000";
+            this.txtTelefono2.Name = "txtTelefono2";
+            this.txtTelefono2.Size = new System.Drawing.Size(112, 20);
+            this.txtTelefono2.TabIndex = 73;
+            // 
             // MantenimientoEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,8 +386,6 @@
         private System.Windows.Forms.ComboBox cmbSucursal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtTelefono2;
-        private System.Windows.Forms.TextBox txtTelefono1;
         private System.Windows.Forms.TextBox txtApellido2;
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtNombre;
@@ -406,5 +406,7 @@
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox txtTelefono1;
+        private System.Windows.Forms.MaskedTextBox txtTelefono2;
     }
 }

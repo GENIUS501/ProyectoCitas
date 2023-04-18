@@ -104,7 +104,7 @@
           <Property Name="Id_Rol" Type="int" />
           <Property Name="ID_PERSONA" Type="int" />
           <Property Name="Usuario" Type="varchar" MaxLength="20" />
-          <Property Name="Contrasena" Type="varchar" MaxLength="20" />
+          <Property Name="Contrasena" Type="varchar(max)" />
           <Property Name="Estado" Type="int" />
         </EntityType>
         <Association Name="Fk_CITA_ESTUDIANTES">
@@ -416,7 +416,7 @@
           <Property Name="Id_Rol" Type="Int32" />
           <Property Name="ID_PERSONA" Type="Int32" />
           <Property Name="Usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="Int32" />
           <NavigationProperty Name="Bitacora_Movimientos" Relationship="Self.Fk_MOVIMIENTOS_USUARIOS" FromRole="Usuarios" ToRole="Bitacora_Movimientos" />
           <NavigationProperty Name="Bitacora_Sesiones" Relationship="Self.Fk_SESIONES_USUARIOS" FromRole="Usuarios" ToRole="Bitacora_Sesiones" />

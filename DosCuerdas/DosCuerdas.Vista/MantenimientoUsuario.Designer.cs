@@ -56,15 +56,15 @@
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTelefono2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTelefono1 = new System.Windows.Forms.TextBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtTelefono1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
             this.GrpDatosPersonales.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -280,12 +280,12 @@
             // 
             // GrpDatosPersonales
             // 
+            this.GrpDatosPersonales.Controls.Add(this.txtTelefono2);
+            this.GrpDatosPersonales.Controls.Add(this.txtTelefono1);
             this.GrpDatosPersonales.Controls.Add(this.txtCedula);
             this.GrpDatosPersonales.Controls.Add(this.btn_buscar);
             this.GrpDatosPersonales.Controls.Add(this.label7);
-            this.GrpDatosPersonales.Controls.Add(this.txtTelefono2);
             this.GrpDatosPersonales.Controls.Add(this.label6);
-            this.GrpDatosPersonales.Controls.Add(this.txtTelefono1);
             this.GrpDatosPersonales.Controls.Add(this.cmbGenero);
             this.GrpDatosPersonales.Controls.Add(this.label5);
             this.GrpDatosPersonales.Controls.Add(this.label4);
@@ -335,14 +335,6 @@
             this.label7.TabIndex = 105;
             this.label7.Text = "Telefono adicional";
             // 
-            // txtTelefono2
-            // 
-            this.txtTelefono2.Enabled = false;
-            this.txtTelefono2.Location = new System.Drawing.Point(11, 205);
-            this.txtTelefono2.Name = "txtTelefono2";
-            this.txtTelefono2.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono2.TabIndex = 106;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -352,14 +344,6 @@
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 103;
             this.label6.Text = "Telefono";
-            // 
-            // txtTelefono1
-            // 
-            this.txtTelefono1.Enabled = false;
-            this.txtTelefono1.Location = new System.Drawing.Point(137, 154);
-            this.txtTelefono1.Name = "txtTelefono1";
-            this.txtTelefono1.Size = new System.Drawing.Size(102, 20);
-            this.txtTelefono1.TabIndex = 104;
             // 
             // cmbGenero
             // 
@@ -425,6 +409,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtTelefono1
+            // 
+            this.txtTelefono1.Enabled = false;
+            this.txtTelefono1.Location = new System.Drawing.Point(137, 158);
+            this.txtTelefono1.Mask = "00000000";
+            this.txtTelefono1.Name = "txtTelefono1";
+            this.txtTelefono1.Size = new System.Drawing.Size(102, 20);
+            this.txtTelefono1.TabIndex = 110;
+            // 
+            // txtTelefono2
+            // 
+            this.txtTelefono2.Enabled = false;
+            this.txtTelefono2.Location = new System.Drawing.Point(11, 205);
+            this.txtTelefono2.Mask = "00000000";
+            this.txtTelefono2.Name = "txtTelefono2";
+            this.txtTelefono2.Size = new System.Drawing.Size(112, 20);
+            this.txtTelefono2.TabIndex = 111;
+            // 
             // MantenimientoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,13 +479,13 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTelefono2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTelefono1;
         private System.Windows.Forms.ComboBox cmbGenero;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.MaskedTextBox txtCedula;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox txtTelefono1;
+        private System.Windows.Forms.MaskedTextBox txtTelefono2;
     }
 }

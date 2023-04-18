@@ -78,7 +78,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(254, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.Size = new System.Drawing.Size(85, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Version 1.0";
             // 
@@ -88,7 +88,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(237, 207);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 16);
+            this.label3.Size = new System.Drawing.Size(123, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "Fecha Abril 2023";
             // 
@@ -98,7 +98,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(254, 248);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 16);
+            this.label4.Size = new System.Drawing.Size(85, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Propietaria";
             // 
@@ -108,7 +108,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(235, 283);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 16);
+            this.label5.Size = new System.Drawing.Size(125, 16);
             this.label5.TabIndex = 10;
             this.label5.Text = "Desarrolladores ";
             // 
@@ -118,7 +118,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(235, 317);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 16);
+            this.label6.Size = new System.Drawing.Size(122, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Vinicio Gamboa ";
             // 
@@ -128,7 +128,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(191, 350);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(223, 16);
+            this.label7.Size = new System.Drawing.Size(224, 16);
             this.label7.TabIndex = 12;
             this.label7.Text = "Alejandra Barquero Fernández ";
             // 
@@ -147,6 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(635, 446);
             this.Controls.Add(this.label8);
@@ -160,6 +161,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.MaximizeBox = false;
             this.Name = "AcercaDe";
             this.Text = "Dos Cuerdas | AcercaDe";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

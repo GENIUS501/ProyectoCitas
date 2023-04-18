@@ -35,8 +35,6 @@
             this.lblInstrumento = new System.Windows.Forms.Label();
             this.lblProfesion = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtTelefono2 = new System.Windows.Forms.TextBox();
-            this.txtTelefono1 = new System.Windows.Forms.TextBox();
             this.txtApellido2 = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -51,12 +49,14 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.lblid = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -117,28 +117,12 @@
             this.txtCorreo.Size = new System.Drawing.Size(118, 20);
             this.txtCorreo.TabIndex = 62;
             // 
-            // txtTelefono2
-            // 
-            this.txtTelefono2.Enabled = false;
-            this.txtTelefono2.Location = new System.Drawing.Point(177, 145);
-            this.txtTelefono2.Name = "txtTelefono2";
-            this.txtTelefono2.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono2.TabIndex = 61;
-            // 
-            // txtTelefono1
-            // 
-            this.txtTelefono1.Enabled = false;
-            this.txtTelefono1.Location = new System.Drawing.Point(11, 145);
-            this.txtTelefono1.Name = "txtTelefono1";
-            this.txtTelefono1.Size = new System.Drawing.Size(118, 20);
-            this.txtTelefono1.TabIndex = 60;
-            // 
             // txtApellido2
             // 
             this.txtApellido2.Enabled = false;
             this.txtApellido2.Location = new System.Drawing.Point(177, 87);
             this.txtApellido2.Name = "txtApellido2";
-            this.txtApellido2.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido2.Size = new System.Drawing.Size(112, 20);
             this.txtApellido2.TabIndex = 59;
             // 
             // txtApellido1
@@ -261,6 +245,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTelefono1);
+            this.groupBox1.Controls.Add(this.txtTelefono2);
             this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Controls.Add(this.btn_buscar);
             this.groupBox1.Controls.Add(this.lblid);
@@ -272,9 +258,7 @@
             this.groupBox1.Controls.Add(this.txtApellido1);
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.lblApellido2);
-            this.groupBox1.Controls.Add(this.txtTelefono2);
             this.groupBox1.Controls.Add(this.txtApellido2);
-            this.groupBox1.Controls.Add(this.txtTelefono1);
             this.groupBox1.Controls.Add(this.lblCorreo);
             this.groupBox1.Controls.Add(this.lblTelefono1);
             this.groupBox1.Controls.Add(this.lblTelefono2);
@@ -285,18 +269,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
-            // groupBox2
+            // txtCedula
             // 
-            this.groupBox2.Controls.Add(this.lblInstrumento);
-            this.groupBox2.Controls.Add(this.cmbInstrumento);
-            this.groupBox2.Controls.Add(this.cmbProfesion);
-            this.groupBox2.Controls.Add(this.lblProfesion);
-            this.groupBox2.Location = new System.Drawing.Point(400, 73);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(181, 142);
-            this.groupBox2.TabIndex = 69;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Adicionales";
+            this.txtCedula.Location = new System.Drawing.Point(176, 33);
+            this.txtCedula.Mask = "000000000000";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(101, 20);
+            this.txtCedula.TabIndex = 76;
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(283, 33);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
+            this.btn_buscar.TabIndex = 75;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // lblid
             // 
@@ -312,31 +302,43 @@
             // 
             this.txtId.Location = new System.Drawing.Point(177, 197);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(117, 20);
+            this.txtId.Size = new System.Drawing.Size(112, 20);
             this.txtId.TabIndex = 74;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblInstrumento);
+            this.groupBox2.Controls.Add(this.cmbInstrumento);
+            this.groupBox2.Controls.Add(this.cmbProfesion);
+            this.groupBox2.Controls.Add(this.lblProfesion);
+            this.groupBox2.Location = new System.Drawing.Point(400, 73);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(181, 142);
+            this.groupBox2.TabIndex = 69;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos Adicionales";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btn_buscar
+            // txtTelefono1
             // 
-            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
-            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_buscar.Location = new System.Drawing.Point(283, 33);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(25, 20);
-            this.btn_buscar.TabIndex = 75;
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            this.txtTelefono1.Enabled = false;
+            this.txtTelefono1.Location = new System.Drawing.Point(11, 145);
+            this.txtTelefono1.Mask = "00000000";
+            this.txtTelefono1.Name = "txtTelefono1";
+            this.txtTelefono1.Size = new System.Drawing.Size(115, 20);
+            this.txtTelefono1.TabIndex = 78;
             // 
-            // txtCedula
+            // txtTelefono2
             // 
-            this.txtCedula.Location = new System.Drawing.Point(176, 33);
-            this.txtCedula.Mask = "000000000000";
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(101, 20);
-            this.txtCedula.TabIndex = 76;
+            this.txtTelefono2.Enabled = false;
+            this.txtTelefono2.Location = new System.Drawing.Point(177, 145);
+            this.txtTelefono2.Mask = "00000000";
+            this.txtTelefono2.Name = "txtTelefono2";
+            this.txtTelefono2.Size = new System.Drawing.Size(112, 20);
+            this.txtTelefono2.TabIndex = 77;
             // 
             // MantenimientoProfesor
             // 
@@ -368,8 +370,6 @@
         private System.Windows.Forms.Label lblInstrumento;
         private System.Windows.Forms.Label lblProfesion;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtTelefono2;
-        private System.Windows.Forms.TextBox txtTelefono1;
         private System.Windows.Forms.TextBox txtApellido2;
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtNombre;
@@ -390,5 +390,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.MaskedTextBox txtCedula;
+        private System.Windows.Forms.MaskedTextBox txtTelefono1;
+        private System.Windows.Forms.MaskedTextBox txtTelefono2;
     }
 }

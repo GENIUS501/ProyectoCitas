@@ -48,6 +48,7 @@
             this.bitacoraIngresos = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraMovimientos = new System.Windows.Forms.ToolStripMenuItem();
             this.Cancelar = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acercaDeToolStripMenuItem,
             this.salirToolStripMenuItem1,
+            this.ayudaToolStripMenuItem,
             this.salirToolStripMenuItem2});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -212,6 +214,13 @@
             this.Cancelar.Text = "Modificar citas de clases";
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,6 +265,7 @@
         private System.Windows.Forms.ToolStripMenuItem bitacoraIngresos;
         private System.Windows.Forms.ToolStripMenuItem bitacoraMovimientos;
         private System.Windows.Forms.ToolStripMenuItem Cancelar;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
     }
 }
 
