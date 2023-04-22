@@ -41,7 +41,6 @@
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblTelefono2 = new System.Windows.Forms.Label();
             this.lblTelefono1 = new System.Windows.Forms.Label();
@@ -51,14 +50,15 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTelefono1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtTelefono1 = new System.Windows.Forms.MaskedTextBox();
-            this.txtTelefono2 = new System.Windows.Forms.MaskedTextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -155,25 +155,17 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = global::DosCuerdas.Vista.Properties.Resources.Close;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(399, 379);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(96, 32);
             this.btnCancelar.TabIndex = 60;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(235, 379);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 59;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblCorreo
             // 
@@ -249,7 +241,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(204, 25);
+            this.label1.Location = new System.Drawing.Point(192, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(291, 24);
             this.label1.TabIndex = 49;
@@ -280,6 +272,24 @@
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // txtTelefono1
+            // 
+            this.txtTelefono1.Enabled = false;
+            this.txtTelefono1.Location = new System.Drawing.Point(22, 169);
+            this.txtTelefono1.Mask = "00000000";
+            this.txtTelefono1.Name = "txtTelefono1";
+            this.txtTelefono1.Size = new System.Drawing.Size(115, 20);
+            this.txtTelefono1.TabIndex = 74;
+            // 
+            // txtTelefono2
+            // 
+            this.txtTelefono2.Enabled = false;
+            this.txtTelefono2.Location = new System.Drawing.Point(186, 169);
+            this.txtTelefono2.Mask = "00000000";
+            this.txtTelefono2.Name = "txtTelefono2";
+            this.txtTelefono2.Size = new System.Drawing.Size(112, 20);
+            this.txtTelefono2.TabIndex = 73;
             // 
             // lblid
             // 
@@ -325,7 +335,7 @@
             this.groupBox2.Controls.Add(this.txtClase);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblClase);
-            this.groupBox2.Location = new System.Drawing.Point(399, 82);
+            this.groupBox2.Location = new System.Drawing.Point(399, 77);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(251, 184);
             this.groupBox2.TabIndex = 76;
@@ -336,34 +346,33 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtTelefono1
+            // btnAceptar
             // 
-            this.txtTelefono1.Enabled = false;
-            this.txtTelefono1.Location = new System.Drawing.Point(22, 169);
-            this.txtTelefono1.Mask = "00000000";
-            this.txtTelefono1.Name = "txtTelefono1";
-            this.txtTelefono1.Size = new System.Drawing.Size(115, 20);
-            this.txtTelefono1.TabIndex = 74;
-            // 
-            // txtTelefono2
-            // 
-            this.txtTelefono2.Enabled = false;
-            this.txtTelefono2.Location = new System.Drawing.Point(186, 169);
-            this.txtTelefono2.Mask = "00000000";
-            this.txtTelefono2.Name = "txtTelefono2";
-            this.txtTelefono2.Size = new System.Drawing.Size(112, 20);
-            this.txtTelefono2.TabIndex = 73;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Image = global::DosCuerdas.Vista.Properties.Resources.OK;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(224, 379);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(86, 32);
+            this.btnAceptar.TabIndex = 59;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // MantenimientoEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 439);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(680, 439);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MantenimientoEstudiante";
             this.Text = "Dos Cuerdas | MantenimientoEstudiante";
             this.Load += new System.EventHandler(this.MantenimientoEstudiante_Load);

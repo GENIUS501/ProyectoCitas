@@ -31,6 +31,8 @@ namespace DosCuerdas.Vista
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BitacoraSesiones));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_fecha = new System.Windows.Forms.Button();
+            this.btn_nombre = new System.Windows.Forms.Button();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_fecha_fin = new System.Windows.Forms.DateTimePicker();
@@ -38,8 +40,6 @@ namespace DosCuerdas.Vista
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btn_fecha = new System.Windows.Forms.Button();
-            this.btn_nombre = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,28 @@ namespace DosCuerdas.Vista
             this.groupBox1.TabIndex = 93;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Busqueda";
+            // 
+            // btn_fecha
+            // 
+            this.btn_fecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_fecha.BackgroundImage")));
+            this.btn_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_fecha.Location = new System.Drawing.Point(245, 102);
+            this.btn_fecha.Name = "btn_fecha";
+            this.btn_fecha.Size = new System.Drawing.Size(25, 20);
+            this.btn_fecha.TabIndex = 56;
+            this.btn_fecha.UseVisualStyleBackColor = true;
+            this.btn_fecha.Click += new System.EventHandler(this.btn_fecha_Click);
+            // 
+            // btn_nombre
+            // 
+            this.btn_nombre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_nombre.BackgroundImage")));
+            this.btn_nombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_nombre.Location = new System.Drawing.Point(115, 44);
+            this.btn_nombre.Name = "btn_nombre";
+            this.btn_nombre.Size = new System.Drawing.Size(25, 20);
+            this.btn_nombre.TabIndex = 55;
+            this.btn_nombre.UseVisualStyleBackColor = true;
+            this.btn_nombre.Click += new System.EventHandler(this.btn_nombre_Click);
             // 
             // txt_usuario
             // 
@@ -119,37 +141,18 @@ namespace DosCuerdas.Vista
             this.reportViewer1.Size = new System.Drawing.Size(797, 284);
             this.reportViewer1.TabIndex = 94;
             // 
-            // btn_fecha
-            // 
-            this.btn_fecha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_fecha.BackgroundImage")));
-            this.btn_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_fecha.Location = new System.Drawing.Point(245, 102);
-            this.btn_fecha.Name = "btn_fecha";
-            this.btn_fecha.Size = new System.Drawing.Size(25, 20);
-            this.btn_fecha.TabIndex = 56;
-            this.btn_fecha.UseVisualStyleBackColor = true;
-            this.btn_fecha.Click += new System.EventHandler(this.btn_fecha_Click);
-            // 
-            // btn_nombre
-            // 
-            this.btn_nombre.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_nombre.BackgroundImage")));
-            this.btn_nombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_nombre.Location = new System.Drawing.Point(115, 44);
-            this.btn_nombre.Name = "btn_nombre";
-            this.btn_nombre.Size = new System.Drawing.Size(25, 20);
-            this.btn_nombre.TabIndex = 55;
-            this.btn_nombre.UseVisualStyleBackColor = true;
-            this.btn_nombre.Click += new System.EventHandler(this.btn_nombre_Click);
-            // 
             // BitacoraSesiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "BitacoraSesiones";
-            this.Text = "BitacoraSesiones";
+            this.Text = "Dos Cuerdas | BitacoraSesiones";
             this.Load += new System.EventHandler(this.BitacoraSesiones_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

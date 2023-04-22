@@ -124,11 +124,14 @@ namespace DosCuerdas.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(948, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ReporteProfesores";
-            this.Text = "ReporteProfesores";
+            this.Text = "Dos Cuerdas | ReporteProfesores";
             this.Load += new System.EventHandler(this.ReporteProfesores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

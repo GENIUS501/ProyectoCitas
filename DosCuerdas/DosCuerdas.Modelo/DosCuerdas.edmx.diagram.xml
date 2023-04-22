@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="63ac2ed13883454a8aada472d2a154bc" Name="Diagram1">
+        <EntityTypeShape EntityType="DosCuerdasModel.Bitacora_Movimientos" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Bitacora_Sesiones" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Cita" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Clientes" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Estudiantes" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Permisos" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Personas" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Profesores" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Roles" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DosCuerdasModel.Usuarios" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_MOVIMIENTOS_USUARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_SESIONES_USUARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_CITA_ESTUDIANTES" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_CITA_PROFESORES" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_CITA_USUARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_Clientes_PERSONAS" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_Estudiantes_PERSONAS" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_PERMISOS_ROLES" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_PROFESORES_PERSONAS" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_USUARIOS_PERSONAS" ManuallyRouted="false" />
+        <AssociationConnector Association="DosCuerdasModel.Fk_USUARIOS_ROLES" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

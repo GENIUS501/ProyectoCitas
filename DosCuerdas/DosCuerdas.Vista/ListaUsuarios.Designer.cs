@@ -43,12 +43,12 @@ namespace DosCuerdas.Vista
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_consultar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dat_principal
@@ -135,11 +135,15 @@ namespace DosCuerdas.Vista
             // 
             this.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_agregar.Enabled = false;
+            this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agregar.Image = global::DosCuerdas.Vista.Properties.Resources.Add;
+            this.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_agregar.Location = new System.Drawing.Point(29, 183);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(86, 41);
             this.btn_agregar.TabIndex = 82;
             this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
@@ -147,11 +151,15 @@ namespace DosCuerdas.Vista
             // 
             this.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_editar.Enabled = false;
+            this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.Image = global::DosCuerdas.Vista.Properties.Resources.Modify;
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_editar.Location = new System.Drawing.Point(121, 183);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(86, 41);
             this.btn_editar.TabIndex = 83;
             this.btn_editar.Text = "Modificar";
+            this.btn_editar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_editar.UseVisualStyleBackColor = true;
             this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
@@ -159,11 +167,15 @@ namespace DosCuerdas.Vista
             // 
             this.btn_eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_eliminar.Enabled = false;
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.Image = global::DosCuerdas.Vista.Properties.Resources.Delete;
+            this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_eliminar.Location = new System.Drawing.Point(213, 183);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(86, 41);
             this.btn_eliminar.TabIndex = 84;
             this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_eliminar.UseVisualStyleBackColor = true;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
@@ -171,47 +183,55 @@ namespace DosCuerdas.Vista
             // 
             this.btn_consultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_consultar.Enabled = false;
+            this.btn_consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_consultar.Image = global::DosCuerdas.Vista.Properties.Resources.How_to;
+            this.btn_consultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_consultar.Location = new System.Drawing.Point(305, 183);
             this.btn_consultar.Name = "btn_consultar";
             this.btn_consultar.Size = new System.Drawing.Size(86, 41);
             this.btn_consultar.TabIndex = 85;
             this.btn_consultar.Text = "Consultar";
+            this.btn_consultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_consultar.UseVisualStyleBackColor = true;
             this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(421, 54);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(350, 116);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 87;
-            this.pictureBox1.TabStop = false;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::DosCuerdas.Vista.Properties.Resources.DosCuerdas;
+            this.pictureBox2.Location = new System.Drawing.Point(516, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(200, 199);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 103;
+            this.pictureBox2.TabStop = false;
+            // 
             // ListaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dat_principal);
             this.Controls.Add(this.btn_consultar);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ListaUsuarios";
             this.Text = "Dos Cuerdas | ListaUsuarios";
             this.Load += new System.EventHandler(this.ListaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dat_principal)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,7 +250,7 @@ namespace DosCuerdas.Vista
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_consultar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

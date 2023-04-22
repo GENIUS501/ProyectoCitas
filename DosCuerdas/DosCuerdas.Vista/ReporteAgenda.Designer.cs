@@ -32,6 +32,7 @@ namespace DosCuerdas.Vista
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteAgenda));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grpBusqueda = new System.Windows.Forms.GroupBox();
+            this.chb_Canceladas = new System.Windows.Forms.CheckBox();
             this.btn_buscar_id = new System.Windows.Forms.Button();
             this.btn_buscar_estudiante = new System.Windows.Forms.Button();
             this.btn_buscar_profesor = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@ namespace DosCuerdas.Vista
             this.txtEstudiante = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProfesor = new System.Windows.Forms.TextBox();
-            this.chb_Canceladas = new System.Windows.Forms.CheckBox();
             this.grpBusqueda.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,17 @@ namespace DosCuerdas.Vista
             this.grpBusqueda.TabIndex = 96;
             this.grpBusqueda.TabStop = false;
             this.grpBusqueda.Text = "Datos de busqueda";
+            // 
+            // chb_Canceladas
+            // 
+            this.chb_Canceladas.AutoSize = true;
+            this.chb_Canceladas.Location = new System.Drawing.Point(9, 178);
+            this.chb_Canceladas.Name = "chb_Canceladas";
+            this.chb_Canceladas.Size = new System.Drawing.Size(100, 17);
+            this.chb_Canceladas.TabIndex = 97;
+            this.chb_Canceladas.Text = "Ver canceladas";
+            this.chb_Canceladas.UseVisualStyleBackColor = true;
+            this.chb_Canceladas.CheckedChanged += new System.EventHandler(this.chb_Canceladas_CheckedChanged);
             // 
             // btn_buscar_id
             // 
@@ -157,26 +168,18 @@ namespace DosCuerdas.Vista
             this.txtProfesor.Size = new System.Drawing.Size(160, 20);
             this.txtProfesor.TabIndex = 2;
             // 
-            // chb_Canceladas
-            // 
-            this.chb_Canceladas.AutoSize = true;
-            this.chb_Canceladas.Location = new System.Drawing.Point(9, 178);
-            this.chb_Canceladas.Name = "chb_Canceladas";
-            this.chb_Canceladas.Size = new System.Drawing.Size(100, 17);
-            this.chb_Canceladas.TabIndex = 97;
-            this.chb_Canceladas.Text = "Ver canceladas";
-            this.chb_Canceladas.UseVisualStyleBackColor = true;
-            this.chb_Canceladas.CheckedChanged += new System.EventHandler(this.chb_Canceladas_CheckedChanged);
-            // 
             // ReporteAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grpBusqueda);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "ReporteAgenda";
-            this.Text = "ReporteAgenda";
+            this.Text = "Dos Cuerdas | ReporteAgenda";
             this.Load += new System.EventHandler(this.ReporteAgenda_Load);
             this.grpBusqueda.ResumeLayout(false);
             this.grpBusqueda.PerformLayout();

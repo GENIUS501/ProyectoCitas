@@ -46,6 +46,7 @@ namespace DosCuerdas.Vista
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "DosCuerdas.Vista.ReporteEstudiantes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(1, 157);
             this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(888, 246);
             this.reportViewer1.TabIndex = 0;
             // 
@@ -123,11 +124,14 @@ namespace DosCuerdas.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(891, 406);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ReporteEstudiantes";
-            this.Text = "ReporteEstudiantes";
+            this.Text = "Dos Cuerdas | ReporteEstudiantes";
             this.Load += new System.EventHandler(this.ReporteEstudiantes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

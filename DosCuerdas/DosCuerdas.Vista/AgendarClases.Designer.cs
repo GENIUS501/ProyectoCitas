@@ -36,6 +36,8 @@ namespace DosCuerdas.Vista
             this.btn_buscar_nombre = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCedulaEstudiante = new System.Windows.Forms.MaskedTextBox();
+            this.txtCedulaProfesor = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtProfesor = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@ namespace DosCuerdas.Vista
             this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtCedulaProfesor = new System.Windows.Forms.MaskedTextBox();
-            this.txtCedulaEstudiante = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datEstudiantes)).BeginInit();
@@ -131,6 +131,22 @@ namespace DosCuerdas.Vista
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de los participantes.";
+            // 
+            // txtCedulaEstudiante
+            // 
+            this.txtCedulaEstudiante.Location = new System.Drawing.Point(8, 170);
+            this.txtCedulaEstudiante.Mask = "000000000000";
+            this.txtCedulaEstudiante.Name = "txtCedulaEstudiante";
+            this.txtCedulaEstudiante.Size = new System.Drawing.Size(101, 20);
+            this.txtCedulaEstudiante.TabIndex = 115;
+            // 
+            // txtCedulaProfesor
+            // 
+            this.txtCedulaProfesor.Location = new System.Drawing.Point(8, 33);
+            this.txtCedulaProfesor.Mask = "000000000000";
+            this.txtCedulaProfesor.Name = "txtCedulaProfesor";
+            this.txtCedulaProfesor.Size = new System.Drawing.Size(101, 20);
+            this.txtCedulaProfesor.TabIndex = 114;
             // 
             // label5
             // 
@@ -256,41 +272,31 @@ namespace DosCuerdas.Vista
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(379, 415);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = global::DosCuerdas.Vista.Properties.Resources.Close;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(404, 403);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(88, 35);
             this.btnCancelar.TabIndex = 88;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(266, 415);
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Image = global::DosCuerdas.Vista.Properties.Resources.OK;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(281, 403);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(84, 35);
             this.btnAceptar.TabIndex = 87;
             this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // txtCedulaProfesor
-            // 
-            this.txtCedulaProfesor.Location = new System.Drawing.Point(8, 33);
-            this.txtCedulaProfesor.Mask = "000000000000";
-            this.txtCedulaProfesor.Name = "txtCedulaProfesor";
-            this.txtCedulaProfesor.Size = new System.Drawing.Size(101, 20);
-            this.txtCedulaProfesor.TabIndex = 114;
-            // 
-            // txtCedulaEstudiante
-            // 
-            this.txtCedulaEstudiante.Location = new System.Drawing.Point(8, 170);
-            this.txtCedulaEstudiante.Mask = "000000000000";
-            this.txtCedulaEstudiante.Name = "txtCedulaEstudiante";
-            this.txtCedulaEstudiante.Size = new System.Drawing.Size(101, 20);
-            this.txtCedulaEstudiante.TabIndex = 115;
             // 
             // errorProvider1
             // 
@@ -306,9 +312,10 @@ namespace DosCuerdas.Vista
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AgendarClases";
-            this.Text = "AgendarClases";
+            this.Text = "Dos Cuerdas | AgendarClases";
             this.Load += new System.EventHandler(this.AgendarClases_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
