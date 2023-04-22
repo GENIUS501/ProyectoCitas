@@ -1,0 +1,12 @@
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\bin\Release\DosCuerdas.Controlador.dll
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\bin\Release\DosCuerdas.Controlador.pdb
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\bin\Release\DosCuerdas.Modelo.dll
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\bin\Release\EntityFramework.dll
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\bin\Release\DosCuerdas.Modelo.pdb
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\bin\Release\DosCuerdas.Modelo.dll.config
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\bin\Release\EntityFramework.xml
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\obj\Release\DosCuerdas.Controlador.csproj.AssemblyReference.cache
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\obj\Release\DosCuerdas.Controlador.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\obj\Release\DosCuerdas.Controlador.csproj.CopyComplete
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\obj\Release\DosCuerdas.Controlador.dll
+C:\Users\Dell\source\repos\ProyectoCitas\ProyectoCitas\DosCuerdas\DosCuerdas.Controlador\obj\Release\DosCuerdas.Controlador.pdb
