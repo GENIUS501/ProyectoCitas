@@ -289,7 +289,9 @@
     <EmbeddedResource Include="ReporteProfesores.resx">
       <DependentUpon>ReporteProfesores.cs</DependentUpon>
     </EmbeddedResource>
-    <AdditionalFiles Include="Ayuda.pdf" />
+    <None Include="Ayuda.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="DosCuerdasDataSet.xsc">
       <DependentUpon>DosCuerdasDataSet.xsd</DependentUpon>
     </None>
