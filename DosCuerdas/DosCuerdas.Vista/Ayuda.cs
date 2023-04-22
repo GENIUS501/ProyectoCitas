@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace DosCuerdas.Vista
 {
@@ -23,7 +24,19 @@ namespace DosCuerdas.Vista
         {
             try
             {
-                System.Diagnostics.Process.Start(Ruta.ToString());
+                // Obtener la ruta completa del archivo PDF
+                string rutaPDF = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Ayuda.pdf");
+
+                // Verificar si el archivo existe
+                if (File.Exists(rutaPDF))
+                {
+                    // Abrir el archivo PDF en el lector de PDF predeterminado del sistema
+                    Process.Start(rutaPDF);
+                }
+                else
+                {
+                    Console.WriteLine("El archivo PDF no existe en la ruta especificada.");
+                }
             }
             catch (Exception ex)
             {
@@ -33,15 +46,7 @@ namespace DosCuerdas.Vista
 
         private void Ayuda_Load(object sender, EventArgs e)
         {
-            try
-            {
-                string path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
-                Ruta = (0, 0, path + "/Ayuda.pdf").ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error al cargar los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
     }
 }
